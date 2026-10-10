@@ -1,0 +1,265 @@
+{
+  "createTime": "2026-10-09T13:54:22.097444Z",
+  "designTheme": {
+    "bodyFont": "ROBOTO_FLEX",
+    "bodyFontFamily": "Roboto Flex",
+    "colorMode": "LIGHT",
+    "colorVariant": "FIDELITY",
+    "customColor": "#2563eb",
+    "designMd": "---\nname: Merchant Voice Utility\ncolors:\n  surface: '#faf8ff'\n  surface-dim: '#d2d9f4'\n  surface-bright: '#faf8ff'\n  surface-container-lowest: '#ffffff'\n  surface-container-low: '#f2f3ff'\n  surface-container: '#eaedff'\n  surface-container-high: '#e2e7ff'\n  surface-container-highest: '#dae2fd'\n  on-surface: '#131b2e'\n  on-surface-variant: '#434655'\n  inverse-surface: '#283044'\n  inverse-on-surface: '#eef0ff'\n  outline: '#737686'\n  outline-variant: '#c3c6d7'\n  surface-tint: '#0053db'\n  primary: '#004ac6'\n  on-primary: '#ffffff'\n  primary-container: '#2563eb'\n  on-primary-container: '#eeefff'\n  inverse-primary: '#b4c5ff'\n  secondary: '#516070'\n  on-secondary: '#ffffff'\n  secondary-container: '#d5e4f8'\n  on-secondary-container: '#576676'\n  tertiary: '#00632b'\n  on-tertiary: '#ffffff'\n  tertiary-container: '#117e3b'\n  on-tertiary-container: '#c4ffc9'\n  error: '#ba1a1a'\n  on-error: '#ffffff'\n  error-container: '#ffdad6'\n  on-error-container: '#93000a'\n  primary-fixed: '#dbe1ff'\n  primary-fixed-dim: '#b4c5ff'\n  on-primary-fixed: '#00174b'\n  on-primary-fixed-variant: '#003ea8'\n  secondary-fixed: '#d5e4f8'\n  secondary-fixed-dim: '#b9c8db'\n  on-secondary-fixed: '#0e1d2b'\n  on-secondary-fixed-variant: '#3a4858'\n  tertiary-fixed: '#95f8a7'\n  tertiary-fixed-dim: '#79db8d'\n  on-tertiary-fixed: '#00210a'\n  on-tertiary-fixed-variant: '#005323'\n  background: '#faf8ff'\n  on-background: '#131b2e'\n  surface-variant: '#dae2fd'\ntypography:\n  display-nominal:\n    fontFamily: Roboto Flex\n    fontSize: 34px\n    fontWeight: '700'\n    lineHeight: 40px\n    letterSpacing: -0.02em\n  display-nominal-mobile:\n    fontFamily: Roboto Flex\n    fontSize: 30px\n    fontWeight: '700'\n    lineHeight: 36px\n    letterSpacing: -0.02em\n  heading-lg:\n    fontFamily: Roboto Flex\n    fontSize: 24px\n    fontWeight: '600'\n    lineHeight: 32px\n    letterSpacing: -0.01em\n  heading-md:\n    fontFamily: Roboto Flex\n    fontSize: 20px\n    fontWeight: '600'\n    lineHeight: 28px\n  body-lg:\n    fontFamily: Roboto Flex\n    fontSize: 16px\n    fontWeight: '400'\n    lineHeight: 24px\n  body-md:\n    fontFamily: Roboto Flex\n    fontSize: 14px\n    fontWeight: '400'\n    lineHeight: 20px\n  button-text:\n    fontFamily: Roboto Flex\n    fontSize: 16px\n    fontWeight: '600'\n    lineHeight: 24px\n    letterSpacing: 0.01em\n  caption:\n    fontFamily: Roboto Flex\n    fontSize: 14px\n    fontWeight: '400'\n    lineHeight: 18px\n  label-sm:\n    fontFamily: Roboto Flex\n    fontSize: 12px\n    fontWeight: '500'\n    lineHeight: 16px\n    letterSpacing: 0.02em\nrounded:\n  sm: 0.25rem\n  DEFAULT: 0.5rem\n  md: 0.75rem\n  lg: 1rem\n  xl: 1.5rem\n  full: 9999px\nspacing:\n  gutter: 1rem\n  margin: 1rem\n  space-xs: 0.5rem\n  space-sm: 1rem\n  space-md: 1.5rem\n  space-lg: 2rem\n  space-xl: 2.5rem\n---\n\n## Brand & Style\nThe design system embodies a utility-first, modern minimalist aesthetic engineered specifically for Indonesian MSME (UMKM) merchants across diverse age groups and varying digital literacy levels. The visual philosophy emphasizes trust, clarity, effortless legibility, and high-contrast ergonomics suitable for dynamic physical stall environments (e.g., bustling markets, outdoor stalls under direct sunlight, or dim indoor warungs). \n\nKey brand characteristics:\n- **Pragmatic & Reassuring:** Provides immediate auditory and glanceable visual feedback, removing anxiety around cashless transaction confirmations.\n- **Approachable Modernity:** Clean surfaces, generous tap targets, uncluttered layouts, and a deliberate absence of visual noise or confusing decorative abstractions.\n- **Auditory-First Synergy:** UI layouts prioritize payment alerts, voice assistant status toggles, and high-impact transaction figures.\n\n## Colors\nThe color palette relies on high-contrast, functional tones designed to meet and exceed WCAG 2.1 AA accessibility ratios against neutral backdrops.\n\n- **Primary (`#2563EB` / Blue 600):** Drives key calls-to-action, primary state toggles, and listening activity indicators.\n- **Primary Pressed / Contrast (`#1D4ED8` / Blue 700):** Applied for pressed states in Jetpack Compose interaction sources, as well as ultra-high-contrast micro-copy.\n- **Primary Container / Soft (`#DBEAFE` / Blue 100):** Backdrop for active listener cards, badge chips, and audio testing highlights.\n- **Background (`#F8FAFC` / Slate 50):** A cool, glare-free canvas that reduces eye strain throughout long market trading hours.\n- **Surface (`#FFFFFF`):** High-clarity elevated containers, bottom sheets, top app bars, and dialogs.\n- **Text Primary (`#0F172A` / Slate 900):** Dominant value displays, headings, and critical status messages.\n- **Text Secondary (`#475569` / Slate 600):** Time metadata, secondary descriptions, and contextual support labels.\n- **Border / Outline (`#E2E8F0` / Slate 200):** Subtle boundary definitions for cards and text inputs to maintain card integrity on varied screen qualities.\n- **Semantic Feedback:**\n  - **Success (`#15803D` / Green 700):** Service running, listener active, TTS sound operational.\n  - **Warning (`#B45309` / Amber 700):** Low device volume alerts, battery optimization cautions.\n  - **Error (`#B91C1C` / Red 700):** Notification listener permission missing, TTS engine offline.\n\n## Typography\nTypography is centered on **Roboto Flex** (Android System Sans), ensuring zero runtime font packaging overhead while delivering maximum readability on standard Android LCD and OLED displays.\n\n- **Nominal Display Typography:** Always uses tabular figures (`tnum`) to ensure numeric alignment across varying payment totals. Currency prefix (\"Rp\") is styled alongside numbers without baseline shift to prevent cognitive friction.\n- **Hierarchy:** Clear distinction between payment values, merchant notification descriptions, and auxiliary timestamps.\n- **Visual Ergonomics:** Line heights are maintained at a minimum of 1.4x for body copy to support aging eyes and rapid glanceability while handling transactions and physical stock.\n\n## Layout & Spacing\nThe layout follows a strict 8dp baseline grid (8dp, 16dp, 24dp, 32dp, 40dp).\n\n- **Screen Padding:** Standard horizontal margins are 16dp (`space-sm`) on phones, scaling to 24dp on large foldable/tablet screens.\n- **Vertical Rhythm:**\n  - Compact gap between related micro-elements: 8dp (`space-xs`).\n  - Standard card interior padding: 16dp (`space-sm`).\n  - Separation between functional sections: 24dp (`space-md`).\n  - Top and bottom view clearances: 32dp (`space-lg`).\n- **Touch Ergonomics:** All touchable targets strictly observe a minimum physical hit area of 48x48dp, with primary merchant action buttons enforcing an explicit 52dp minimum vertical height.\n\n## Elevation & Depth\nElevation is maintained using a hybrid of tonal layering and soft ambient shadows to keep views crisp under outdoor ambient light:\n\n- **Level 0 (Flat / Canvas):** Surface color `#F8FAFC`, no shadow.\n- **Level 1 (Cards & List Items):** Surface `#FFFFFF`, border 1dp solid `#E2E8F0`, ambient drop shadow: 0dp horizontal, 2dp vertical, 8dp blur, color `#0F172A` at 4% opacity.\n- **Level 2 (Active Assistant Banner / Modals):** Surface `#FFFFFF` or `#DBEAFE`, ambient drop shadow: 0dp horizontal, 4dp vertical, 16dp blur, color `#0F172A` at 8% opacity.\n- **Level 3 (Bottom Navigation & Sheets):** Surface `#FFFFFF`, top stroke 1dp solid `#E2E8F0`, shadow: 0dp horizontal, -4dp vertical, 20dp blur, color `#0F172A` at 6% opacity.\n\n## Shapes\nShapes employ welcoming, soft geometry that creates clear visual affordances without feeling childlike or overly playful:\n\n- **Buttons:** 12dp to 16dp corner radius (`RoundedCornerShape(14.dp)` in Jetpack Compose).\n- **Cards & Status Banners:** 16dp to 20dp corner radius (`RoundedCornerShape(18.dp)`).\n- **Badges & Chips:** 8dp corner radius for compact tags; pill-shaped (`RoundedCornerShape(50)`) exclusively for real-time status pills (e.g., \"Mendengarkan\", \"Aktif\").\n- **Bottom Navigation Surface:** 0dp bottom corners, 20dp top-left and top-right corner radius.\n\n## Components\n\n### Buttons\n- **Primary Button:** Background `#2563EB`, text `#FFFFFF`, 16sp Semibold. Minimum height 52dp. Corner radius 14dp. Pressed state shifts to `#1D4ED8`. Ripple effect configured via Compose `rememberRipple`.\n- **Secondary / Outlined Button:** Background transparent, border 1.5dp solid `#2563EB`, text `#2563EB`. Minimum height 52dp.\n- **Critical Action Button:** Background `#B91C1C`, text `#FFFFFF` (used exclusively for permission overrides or critical resets).\n\n### Transaction & Voice Status Cards\n- **Voice Monitoring Highlight Card:** Background `#DBEAFE`, border 1.5dp `#2563EB`, radius 18dp, padding 16dp. Houses the master switch, live microphone/notification pulse indicator, and volume status indicator.\n- **Transaction History Card:** Background `#FFFFFF`, border 1dp `#E2E8F0`, radius 16dp, padding 16dp. Left-aligned bank/e-wallet icon badge, center column with timestamp and masked buyer name, right-aligned nominal in `#0F172A` (20sp Bold).\n\n### Chips & Status Indicators\n- **Status Chip:** Height 32dp, radius 16dp (pill).\n  - *Active:* Background `#DCFCE7` (Green 100), text `#15803D` (Green 700), leading 8dp green dot.\n  - *Warning:* Background `#FEF3C7` (Amber 100), text `#B45309` (Amber 700), leading 8dp warning icon.\n  - *Inactive / Error:* Background `#FEE2E2` (Red 100), text `#B91C1C` (Red 700).\n\n### Lists & Dividers\n- Single-line and two-line list rows have a minimum touch height of 56dp.\n- Dividers are 1dp `#E2E8F0`, inset by 16dp to align with typography left margins.\n\n### Inputs & Sliders (Audio Settings)\n- **Voice Test Input Field:** Surface `#FFFFFF`, border 1.5dp `#E2E8F0`, focus border 2dp `#2563EB`, height 56dp, radius 12dp.\n- **Volume & Pitch Sliders:** Active track `#2563EB` (height 6dp), inactive track `#E2E8F0` (height 6dp), thumb `#2563EB` with 24dp hit diameter.\n\n### Bottom Navigation Bar\n- Height 64dp + system gesture insets.\n- Background `#FFFFFF` with top border 1dp `#E2E8F0`.\n- 3 primary destinations: **Beranda** (Home / Voice Monitor), **Riwayat** (Transaction History), and **Pengaturan** (Voice & Permission Settings).\n- Active item: `#2563EB` with bold label. Inactive item: `#475569`.",
+    "font": "ROBOTO_FLEX",
+    "headlineFont": "ROBOTO_FLEX",
+    "headlineFontFamily": "Roboto Flex",
+    "labelFont": "ROBOTO_FLEX",
+    "labelFontFamily": "Roboto Flex",
+    "namedColors": {
+      "background": "#faf8ff",
+      "error": "#ba1a1a",
+      "error_container": "#ffdad6",
+      "inverse_on_surface": "#eef0ff",
+      "inverse_primary": "#b4c5ff",
+      "inverse_surface": "#283044",
+      "on_background": "#131b2e",
+      "on_error": "#ffffff",
+      "on_error_container": "#93000a",
+      "on_primary": "#ffffff",
+      "on_primary_container": "#eeefff",
+      "on_primary_fixed": "#00174b",
+      "on_primary_fixed_variant": "#003ea8",
+      "on_secondary": "#ffffff",
+      "on_secondary_container": "#576676",
+      "on_secondary_fixed": "#0e1d2b",
+      "on_secondary_fixed_variant": "#3a4858",
+      "on_surface": "#131b2e",
+      "on_surface_variant": "#434655",
+      "on_tertiary": "#ffffff",
+      "on_tertiary_container": "#c4ffc9",
+      "on_tertiary_fixed": "#00210a",
+      "on_tertiary_fixed_variant": "#005323",
+      "outline": "#737686",
+      "outline_variant": "#c3c6d7",
+      "primary": "#004ac6",
+      "primary_container": "#2563eb",
+      "primary_fixed": "#dbe1ff",
+      "primary_fixed_dim": "#b4c5ff",
+      "secondary": "#516070",
+      "secondary_container": "#d5e4f8",
+      "secondary_fixed": "#d5e4f8",
+      "secondary_fixed_dim": "#b9c8db",
+      "surface": "#faf8ff",
+      "surface_bright": "#faf8ff",
+      "surface_container": "#eaedff",
+      "surface_container_high": "#e2e7ff",
+      "surface_container_highest": "#dae2fd",
+      "surface_container_low": "#f2f3ff",
+      "surface_container_lowest": "#ffffff",
+      "surface_dim": "#d2d9f4",
+      "surface_tint": "#0053db",
+      "surface_variant": "#dae2fd",
+      "tertiary": "#00632b",
+      "tertiary_container": "#117e3b",
+      "tertiary_fixed": "#95f8a7",
+      "tertiary_fixed_dim": "#79db8d"
+    },
+    "overrideNeutralColor": "#0f172a",
+    "overridePrimaryColor": "#2563eb",
+    "overrideSecondaryColor": "#dbeafe",
+    "overrideTertiaryColor": "#15803d",
+    "roundness": "ROUND_EIGHT",
+    "spacing": {
+      "gutter": "1rem",
+      "margin": "1rem",
+      "space-lg": "2rem",
+      "space-md": "1.5rem",
+      "space-sm": "1rem",
+      "space-xl": "2.5rem",
+      "space-xs": "0.5rem"
+    },
+    "spacingScale": 2,
+    "typography": {
+      "body-lg": {
+        "fontFamily": "Roboto Flex",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px"
+      },
+      "body-md": {
+        "fontFamily": "Roboto Flex",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "20px"
+      },
+      "button-text": {
+        "fontFamily": "Roboto Flex",
+        "fontSize": "16px",
+        "fontWeight": "600",
+        "letterSpacing": "0.01em",
+        "lineHeight": "24px"
+      },
+      "caption": {
+        "fontFamily": "Roboto Flex",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "18px"
+      },
+      "display-nominal": {
+        "fontFamily": "Roboto Flex",
+        "fontSize": "34px",
+        "fontWeight": "700",
+        "letterSpacing": "-0.02em",
+        "lineHeight": "40px"
+      },
+      "display-nominal-mobile": {
+        "fontFamily": "Roboto Flex",
+        "fontSize": "30px",
+        "fontWeight": "700",
+        "letterSpacing": "-0.02em",
+        "lineHeight": "36px"
+      },
+      "heading-lg": {
+        "fontFamily": "Roboto Flex",
+        "fontSize": "24px",
+        "fontWeight": "600",
+        "letterSpacing": "-0.01em",
+        "lineHeight": "32px"
+      },
+      "heading-md": {
+        "fontFamily": "Roboto Flex",
+        "fontSize": "20px",
+        "fontWeight": "600",
+        "lineHeight": "28px"
+      },
+      "label-sm": {
+        "fontFamily": "Roboto Flex",
+        "fontSize": "12px",
+        "fontWeight": "500",
+        "letterSpacing": "0.02em",
+        "lineHeight": "16px"
+      }
+    }
+  },
+  "deviceType": "MOBILE",
+  "metadata": {
+    "userRole": "OWNER"
+  },
+  "name": "projects/15423157619100262672",
+  "origin": "STITCH",
+  "projectType": "TEXT_TO_UI_PRO",
+  "screenInstances": [
+    {
+      "height": 1827,
+      "id": "26ae97e8f4b247f2b36968c8d97760c5",
+      "label": "S-07 Dialog Konfirmasi Hapus Riwayat",
+      "sourceScreen": "projects/15423157619100262672/screens/26ae97e8f4b247f2b36968c8d97760c5",
+      "width": 390,
+      "y": 3224
+    },
+    {
+      "height": 1827,
+      "id": "27d046adce1a42579939450deffb0d94",
+      "label": "S-07 Pengaturan Suara & Izin",
+      "sourceScreen": "projects/15423157619100262672/screens/27d046adce1a42579939450deffb0d94",
+      "width": 390,
+      "x": 3304
+    },
+    {
+      "height": 1199,
+      "id": "2cd0af32e68a4f399b51e33bb7ef233b",
+      "label": "S-05 Beranda (Pemantauan Aktif)",
+      "sourceScreen": "projects/15423157619100262672/screens/2cd0af32e68a4f399b51e33bb7ef233b",
+      "width": 390,
+      "x": 2396
+    },
+    {
+      "height": 308,
+      "id": "394fa65df03247b789c16b2cb68c7c32",
+      "label": "Ilustrasi Onboarding Qrisku",
+      "sourceScreen": "projects/15423157619100262672/screens/394fa65df03247b789c16b2cb68c7c32",
+      "width": 400,
+      "x": 1024
+    },
+    {
+      "height": 882,
+      "id": "3c9f591d923240ca81ea9aad09f44423",
+      "label": "S-02 & S-03 Onboarding & Izin Notifikasi",
+      "sourceScreen": "projects/15423157619100262672/screens/3c9f591d923240ca81ea9aad09f44423",
+      "width": 390,
+      "x": 1942
+    },
+    {
+      "height": 1469,
+      "id": "4c4102cd6fa749479290dbfde1f0f84a",
+      "label": "S-06 Riwayat Notifikasi",
+      "sourceScreen": "projects/15423157619100262672/screens/4c4102cd6fa749479290dbfde1f0f84a",
+      "width": 390,
+      "x": 2850
+    },
+    {
+      "height": 547,
+      "id": "55dae19ea25a4b97a8b0e119f33c0baa",
+      "label": "Generating Screen...",
+      "sourceScreen": "projects/15423157619100262672/screens/55dae19ea25a4b97a8b0e119f33c0baa",
+      "width": 390,
+      "x": 304,
+      "y": 5307
+    },
+    {
+      "height": 996,
+      "id": "96b95e0a4d5f4bdfa6532a5d102d85af",
+      "label": "S-04 Onboarding Uji Suara TTS",
+      "sourceScreen": "projects/15423157619100262672/screens/96b95e0a4d5f4bdfa6532a5d102d85af",
+      "width": 390,
+      "x": 1488
+    },
+    {
+      "height": 168,
+      "id": "a7b57c96c1fb4e08b4c895eacc62cc16",
+      "label": "Generating Image...",
+      "sourceScreen": "projects/15423157619100262672/screens/a7b57c96c1fb4e08b4c895eacc62cc16",
+      "width": 240,
+      "y": 5307
+    },
+    {
+      "height": 540,
+      "id": "assets_baaff69d6b9a493f98cce012c24d1b08",
+      "sourceAsset": "assets/baaff69d6b9a493f98cce012c24d1b08",
+      "type": "DESIGN_SYSTEM_INSTANCE",
+      "width": 960,
+      "x": 1024,
+      "y": -636
+    },
+    {
+      "height": 636,
+      "id": "c494f7b7fd5f43229733b3ad45765b8f",
+      "label": "S-06 Detail Notifikasi (Bottom Sheet)",
+      "sourceScreen": "projects/15423157619100262672/screens/c494f7b7fd5f43229733b3ad45765b8f",
+      "width": 390,
+      "y": 2084
+    },
+    {
+      "height": 1768,
+      "id": "ced823a9-1a78-40c5-8686-9e6ed32d4fd2",
+      "label": "PRD_Desain_UI_UX_Qrisku_App_v1.0.md",
+      "sourceScreen": "projects/15423157619100262672/screens/15369102763386810496",
+      "type": "SCREEN_INSTANCE",
+      "width": 780
+    },
+    {
+      "height": 578,
+      "id": "e3922dbff2324d6ba1010a221ba8b2c3",
+      "label": "S-06 Detail Notifikasi (Bottom Sheet)",
+      "sourceScreen": "projects/15423157619100262672/screens/e3922dbff2324d6ba1010a221ba8b2c3",
+      "width": 390,
+      "x": 454,
+      "y": 2084
+    }
+  ],
+  "thumbnailScreenshot": {
+    "downloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1Xch3prifXwTDaYLS9K84Fl5_YcxwzNcbiqPOsIl8aX0g11PoUaUV9u0TSeju5N3lv8VdGx4ZXuiLzrBQ-2rDZfp5UmoPGLVF6CQOP57I63XVd3gab19s5IYZhFhuGTBJrLT3K14LD92jD6iW7PCbFkhotPQc5Eqz-LaV8eVI5fOIxsoRJpNubj0zWAm5MV3anmtqJvWf0oJijaRu8UynbsmVkRy7peSGKICxbwLg_ZtB4gxfoq5sI2MzKz",
+    "name": "projects/15423157619100262672/screens/394fa65df03247b789c16b2cb68c7c32/fileEntries/screenshot"
+  },
+  "title": "PRD UI Component Design",
+  "updateTime": "2026-10-09T15:02:22.120032Z",
+  "visibility": "PRIVATE"
+}
+

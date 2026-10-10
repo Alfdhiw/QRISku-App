@@ -1,71 +1,55 @@
 package id.qrisku.app
 
-import android.content.ComponentName
+import android.content.ActivityNotFoundException
 import android.content.Intent
+import android.graphics.Color
+import android.media.AudioManager
 import android.os.Bundle
 import android.provider.Settings
+import android.widget.Toast
 import androidx.activity.ComponentActivity
+import androidx.activity.SystemBarStyle
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Button
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.setValue
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
+import androidx.activity.enableEdgeToEdge
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
+import id.qrisku.app.data.PaymentSource
+import id.qrisku.app.ui.DeviceActions
+import id.qrisku.app.ui.QriskuApp
+import id.qrisku.app.ui.theme.QriskuTheme
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.isActive
+import kotlinx.coroutines.launch
 
 class MainActivity : ComponentActivity() {
-    private var listenerEnabled by mutableStateOf(false)
-    private var previewVoice: VoiceEngine? = null
+    private val controller get() = (application as QriskuApplication).controller
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        installSplashScreen()
         super.onCreate(savedInstanceState)
-        previewVoice = VoiceEngine(applicationContext)
-        setContent {
-            MaterialTheme {
-                Surface(modifier = Modifier.fillMaxSize()) {
-                    Column(
-                        modifier = Modifier.padding(24.dp),
-                        verticalArrangement = Arrangement.Center
-                    ) {
-                        Text("Qrisku App — PoC", style = MaterialTheme.typography.headlineMedium)
-                        Spacer(modifier = Modifier.height(12.dp))
-                        Text(if (listenerEnabled) "Akses notifikasi: AKTIF" else "Akses notifikasi: BELUM AKTIF")
-                        Spacer(modifier = Modifier.height(12.dp))
-                        Button(
-                            onClick = {
-                                startActivity(Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS))
-                            },
-                            modifier = Modifier.fillMaxWidth()
-                        ) { Text("Buka Pengaturan Akses Notifikasi") }
-                        Spacer(modifier = Modifier.height(12.dp))
-                        Button(
-                            onClick = {
-                                previewVoice?.speak(
-                                    "Contoh suara Qrisku. Pembayaran masuk sebesar dua puluh sembilan ribu rupiah."
-                                )
-                            },
-                            modifier = Modifier.fillMaxWidth()
-                        ) { Text("Tes Suara (Simulasi)") }
-                        Spacer(modifier = Modifier.height(24.dp))
-                        Text("Peristiwa terakhir:", style = MaterialTheme.typography.titleMedium)
-                        Spacer(modifier = Modifier.height(6.dp))
-                        Text(PocState.lastEvent)
-                        Spacer(modifier = Modifier.height(12.dp))
-                        Text(
-                            "Data berasal dari notifikasi Android, bukan verifikasi langsung ke DANA.",
-                            style = MaterialTheme.typography.bodySmall
-                        )
-                    }
+        enableEdgeToEdge(statusBarStyle = SystemBarStyle.light(Color.TRANSPARENT, Color.TRANSPARENT),
+            navigationBarStyle = SystemBarStyle.light(Color.TRANSPARENT, Color.rgb(15, 23, 42)))
+        volumeControlStream = AudioManager.STREAM_MUSIC
+        val actions = DeviceActions(
+            permission = { openSettings(Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS)) },
+            voiceSettings = { openSettings(Intent("com.android.settings.TTS_SETTINGS")) },
+            volumeSettings = { openSettings(Intent(Settings.ACTION_SOUND_SETTINGS)) },
+            batterySettings = { openSettings(Intent(Settings.ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS)) },
+            openDana = {
+                val intent = packageManager.getLaunchIntentForPackage(PaymentSource.PACKAGE)
+                if (intent == null) Toast.makeText(this, "DANA belum terpasang di perangkat ini.", Toast.LENGTH_LONG).show()
+                else openSettings(intent)
+            }
+        )
+        setContent { QriskuTheme { QriskuApp(controller, actions) } }
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.RESUMED) {
+                while (isActive) {
+                    // Refresh hardware volume and permission only while the screen is visible.
+                    controller.refreshDevice()
+                    delay(2_000)
                 }
             }
         }
@@ -73,18 +57,16 @@ class MainActivity : ComponentActivity() {
 
     override fun onResume() {
         super.onResume()
-        val enabled = Settings.Secure.getString(
-            contentResolver, "enabled_notification_listeners"
-        ) ?: ""
-        val myComponent = ComponentName(this, QriskuNotificationListener::class.java)
-        listenerEnabled = enabled.split(':').any {
-            ComponentName.unflattenFromString(it) == myComponent
-        }
+        controller.refreshDevice()
     }
 
-    override fun onDestroy() {
-        previewVoice?.shutdown()
-        previewVoice = null
-        super.onDestroy()
+    private fun openSettings(intent: Intent) {
+        try {
+            startActivity(intent)
+        } catch (_: ActivityNotFoundException) {
+            Toast.makeText(this, "Pengaturan ini tidak tersedia pada perangkat. Buka Pengaturan Android.", Toast.LENGTH_LONG).show()
+        } catch (_: SecurityException) {
+            Toast.makeText(this, "Pengaturan belum dapat dibuka. Buka Pengaturan Android secara manual.", Toast.LENGTH_LONG).show()
+        }
     }
 }

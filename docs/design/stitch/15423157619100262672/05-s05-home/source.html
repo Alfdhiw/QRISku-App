@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-variant": "#dae2fd", "on-primary": "#ffffff", "secondary": "#516070", "surface": "#faf8ff", "inverse-surface": "#283044", "on-tertiary": "#ffffff", "primary-fixed-dim": "#b4c5ff", "on-secondary-fixed": "#0e1d2b", "surface-bright": "#faf8ff", "on-primary-fixed-variant": "#003ea8", "primary-container": "#2563eb", "surface-container-high": "#e2e7ff", "surface-container-highest": "#dae2fd", "tertiary-fixed-dim": "#79db8d", "secondary-container": "#d5e4f8", "on-error": "#ffffff", "surface-container-lowest": "#ffffff", "surface-container": "#eaedff", "outline": "#737686", "tertiary-fixed": "#95f8a7", "on-secondary-container": "#576676", "primary": "#004ac6", "on-tertiary-container": "#c4ffc9", "on-tertiary-fixed": "#00210a", "error": "#ba1a1a", "secondary-fixed-dim": "#b9c8db", "surface-dim": "#d2d9f4", "on-tertiary-fixed-variant": "#005323", "on-error-container": "#93000a", "on-primary-fixed": "#00174b", "outline-variant": "#c3c6d7", "on-surface": "#131b2e", "tertiary-container": "#117e3b", "on-background": "#131b2e", "error-container": "#ffdad6", "on-secondary-fixed-variant": "#3a4858", "primary-fixed": "#dbe1ff", "background": "#faf8ff", "surface-tint": "#0053db", "tertiary": "#00632b", "on-surface-variant": "#434655", "on-primary-container": "#eeefff", "inverse-primary": "#b4c5ff", "inverse-on-surface": "#eef0ff", "on-secondary": "#ffffff", "surface-container-low": "#f2f3ff", "secondary-fixed": "#d5e4f8" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-sm": "1rem", "gutter": "1rem", "margin": "1rem", "space-lg": "2rem", "space-xl": "2.5rem", "space-xs": "0.5rem", "space-md": "1.5rem" }, "fontFamily": { "caption": ["Roboto Flex"], "button-text": ["Roboto Flex"], "label-sm": ["Roboto Flex"], "heading-lg": ["Roboto Flex"], "display-nominal-mobile": ["Roboto Flex"], "heading-md": ["Roboto Flex"], "display-nominal": ["Roboto Flex"], "body-lg": ["Roboto Flex"], "body-md": ["Roboto Flex"] }, "fontSize": { "caption": ["14px", { "lineHeight": "18px", "fontWeight": "400" }], "button-text": ["16px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "600" }], "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }], "heading-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "display-nominal-mobile": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "heading-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "display-nominal": ["34px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter flex items-center justify-between"><div class="flex items-center gap-space-xs"><img alt="Logo Qrisku" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XgO2k4P9GWbc82yok7VRhgo5oHP81hFjFtk-758EZrRTeaBxol6ZE0PS-j2rOT3chCpL9-m3NggI9_mcD0OcOo1hTJ37g1UfYUTr0S7a4G2rcjdJVYNwutbF6KS94zijTXanf8NZ8fC45lyf2olpz2n4J-I3YBMN13ftRNPfxzBhJ8hKqADS262ncTWpfJTqCPLb0QL8zEu79GSmN6ulZ5I52-39LwDitCcNypprI_MZOJk0YgI2gmwptI"/><div class="flex flex-col"><div class="flex items-center gap-1.5"><span class="font-heading-md text-heading-md text-primary tracking-tight">Qrisku</span><span class="px-1.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-[10px] uppercase leading-none font-semibold">Pro</span></div><span class="font-caption text-caption text-on-surface-variant text-[11px] leading-tight">Voice Assistant</span></div></div><div class="flex items-center gap-2"><button aria-label="Bantuan dan Panduan" class="min-w-[48px] min-h-[48px] flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary active:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[24px]">help_outline</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 w-full bg-surface pt-16 pb-28"><div class="flex flex-col w-full px-gutter space-y-space-md">
+<!-- Merchant Warm Greeting & Operational Badge -->
+<section class="flex flex-col gap-1 pt-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-primary">
+<span class="material-symbols-outlined text-[18px]">storefront</span>
+<span class="font-label-sm text-label-sm font-semibold tracking-wide uppercase">Warung Berkah Jaya</span>
+</div>
+<div class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-label-sm text-label-sm" id="live-time">10:48 WIB</span>
+</div>
+</div>
+<h1 class="font-heading-lg text-heading-lg text-on-surface font-bold tracking-tight">Halo, siap jualan hari ini?</h1>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-outline">calendar_today</span>
+<span id="live-date">Selasa, 24 Oktober 2023</span>
+<span class="text-outline">•</span>
+<span class="text-tertiary font-medium">Shift Aktif</span>
+</p>
+</section>
+<!-- KARTU 1: Status Pemantauan (Paling Menonjol) -->
+<section class="relative overflow-hidden rounded-xl bg-tertiary-fixed/20 p-space-sm shadow-sm">
+<div class="absolute -right-6 -bottom-6 w-28 h-28 rounded-full bg-tertiary-fixed-dim/30 pointer-events-none blur-xl"></div>
+<div class="flex items-start gap-space-xs relative z-10">
+<div class="relative flex-shrink-0 mt-0.5">
+<div class="w-11 h-11 rounded-full bg-tertiary-container flex items-center justify-center text-on-tertiary shadow-sm">
+<span class="material-symbols-outlined text-[24px]">check_circle</span>
+</div>
+<span class="absolute -top-0.5 -right-0.5 flex h-3.5 w-3.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-tertiary"></span>
+</span>
+</div>
+<div class="flex-1 min-w-0 flex flex-col gap-1">
+<div class="flex items-center justify-between gap-2 flex-wrap">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-tertiary text-on-tertiary">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary"></span>
+<span class="font-label-sm text-label-sm font-semibold tracking-wide">Pemantauan Aktif</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant text-[11px] bg-surface-container-highest px-2 py-0.5 rounded">Latar Belakang</span>
+</div>
+<h2 class="font-heading-md text-heading-md text-on-surface font-semibold pt-0.5">
+          Siap mendeteksi notifikasi DANA Bisnis
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          Layanan pembacaan suara latar belakang berjalan normal tanpa jeda.
+        </p>
+</div>
+</div>
+</section>
+<!-- KARTU 2: Kontrol Cepat & Suara Otomatis -->
+<section class="rounded-xl bg-surface-container-lowest p-space-sm shadow-sm flex items-center justify-between gap-space-sm">
+<div class="flex items-start gap-space-xs min-w-0">
+<div class="w-10 h-10 rounded-xl bg-primary-fixed flex items-center justify-center text-primary flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[22px]">volume_up</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-body-lg text-body-lg text-on-surface font-semibold">Bacakan Otomatis</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-[11px] font-semibold" id="toggle-badge">AKTIF</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant mt-0.5">
+          Notifikasi masuk langsung disuarakan tanpa membuka layar.
+        </p>
+</div>
+</div>
+<!-- Master Switch Control -->
+<div class="flex-shrink-0">
+<button aria-checked="true" aria-label="Aktifkan pembacaan suara otomatis" class="w-14 h-8 flex items-center rounded-full p-1 bg-primary transition-colors duration-200 focus:outline-none" id="auto-voice-switch" role="switch" type="button">
+<div class="bg-on-primary w-6 h-6 rounded-full shadow-md transform translate-x-6 transition-transform duration-200 flex items-center justify-center" id="switch-thumb">
+<span class="material-symbols-outlined text-primary text-[14px]">check</span>
+</div>
+</button>
+</div>
+</section>
+<!-- KARTU 3: Tombol Aksi Sentuh Besar Uji Suara -->
+<section class="flex flex-col gap-1.5">
+<button class="group w-full min-h-[56px] py-3.5 px-space-sm rounded-xl bg-surface-container-high hover:bg-surface-variant active:scale-[0.99] transition-all flex items-center justify-center gap-3 shadow-sm text-primary" id="btn-test-voice" type="button">
+<div class="w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-sm flex-shrink-0 transition-transform group-hover:scale-105">
+<span class="material-symbols-outlined text-[20px]" id="test-icon">record_voice_over</span>
+</div>
+<div class="flex flex-col text-left">
+<span class="font-button-text text-button-text font-bold text-primary leading-tight">Uji Suara Asisten</span>
+<span class="font-caption text-caption text-on-surface-variant text-[12px] leading-tight" id="test-caption">Tekan untuk mendengarkan simulasi suara</span>
+</div>
+<span class="material-symbols-outlined ml-auto text-primary text-[20px]">play_circle</span>
+</button>
+<!-- Audio Wave Visualizer Simulation (Hidden by default, shown on click) -->
+<div class="hidden items-center justify-between px-space-sm py-2 rounded-lg bg-surface-container-lowest text-on-surface" id="audio-wave-box">
+<div class="flex items-center gap-1.5">
+<span class="inline-block w-1.5 h-4 bg-primary animate-pulse rounded-full"></span>
+<span class="inline-block w-1.5 h-6 bg-primary animate-pulse rounded-full" style="animation-delay: 150ms"></span>
+<span class="inline-block w-1.5 h-3 bg-primary animate-pulse rounded-full" style="animation-delay: 300ms"></span>
+<span class="inline-block w-1.5 h-5 bg-primary animate-pulse rounded-full" style="animation-delay: 450ms"></span>
+<span class="font-caption text-caption text-primary font-medium ml-2">"Pembayaran Rp29.000 dari DANA Bisnis diterima!"</span>
+</div>
+<button class="text-on-surface-variant hover:text-error" id="btn-stop-audio" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</section>
+<!-- KARTU 4: Notifikasi Terakhir Dideteksi -->
+<section class="rounded-xl bg-surface-container-lowest p-space-sm shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between pb-1">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm font-semibold uppercase tracking-wider text-on-surface-variant">Notifikasi Terakhir</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-[11px] font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">payments</span>
+          DANA Bisnis
+        </span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Hari ini, 10:42 WIB</span>
+</div>
+<!-- Nominal Display -->
+<div class="flex items-baseline justify-between py-1">
+<div class="flex flex-col">
+<span class="font-caption text-caption text-on-surface-variant">Nominal Masuk</span>
+<span class="font-display-nominal-mobile text-display-nominal-mobile text-on-surface font-extrabold tracking-tight">
+          Rp29.000
+        </span>
+</div>
+<!-- Audio Speech Tag -->
+<div class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed self-end mb-1">
+<span class="material-symbols-outlined text-[15px] font-bold">done_all</span>
+<span class="font-label-sm text-label-sm font-semibold">Sudah dibacakan</span>
+</div>
+</div>
+<!-- Merchant Transaction Context Details -->
+<div class="rounded-lg bg-surface-container-low p-2.5 flex items-center justify-between text-on-surface-variant font-caption text-caption">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-[11px]">
+          AR
+        </div>
+<span>Pelanggan: <strong class="text-on-surface font-medium">A*** R****</strong></span>
+</div>
+<span class="text-[12px] font-mono text-outline">REF#883921</span>
+</div>
+<!-- PRD Transparency Advisory Note -->
+<div class="flex items-start gap-2 pt-1">
+<span class="material-symbols-outlined text-outline text-[16px] mt-0.5 flex-shrink-0">info</span>
+<p class="font-caption text-caption text-on-surface-variant text-[12px] leading-tight">
+        Notifikasi DANA Bisnis terdeteksi. Periksa aplikasi DANA untuk konfirmasi transaksi resmi.
+      </p>
+</div>
+</section>
+<!-- Banner Edukasi Ringan -->
+<section class="rounded-xl bg-surface-container p-space-sm shadow-sm flex items-start gap-space-xs">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">lightbulb</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-md font-semibold text-on-surface">Tips Pengeras Suara Warung</span>
+<p class="font-caption text-caption text-on-surface-variant mt-0.5 leading-relaxed">
+        Pastikan mode senyap HP tidak aktif dan volume multimedia dinaikkan maksimal agar suara transaksi terdengar jelas dari kejauhan saat melayani pembeli.
+      </p>
+</div>
+</section>
+<!-- Micro Visual: Quick Audio Device Status -->
+<section class="flex items-center justify-around py-1 text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-tertiary">bluetooth_connected</span>
+<span class="font-caption text-caption text-[12px]">Speaker Bluetooth: <strong>Tersambung</strong></span>
+</div>
+<span class="text-outline-variant">•</span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">volume_up</span>
+<span class="font-caption text-caption text-[12px]">Volume Suara: <strong>95%</strong></span>
+</div>
+</section>
+</div>
+<script>
+  (function() {
+    // 1. Auto Voice Switch Toggle State
+    const toggleBtn = document.getElementById('auto-voice-switch');
+    const toggleThumb = document.getElementById('switch-thumb');
+    const toggleBadge = document.getElementById('toggle-badge');
+    let isAutoVoiceOn = true;
+
+    if (toggleBtn && toggleThumb && toggleBadge) {
+      toggleBtn.addEventListener('click', function() {
+        isAutoVoiceOn = !isAutoVoiceOn;
+        toggleBtn.setAttribute('aria-checked', isAutoVoiceOn ? 'true' : 'false');
+
+        if (isAutoVoiceOn) {
+          toggleBtn.classList.remove('bg-secondary-container');
+          toggleBtn.classList.add('bg-primary');
+          toggleThumb.classList.remove('translate-x-0');
+          toggleThumb.classList.add('translate-x-6');
+          toggleThumb.innerHTML = '<span class="material-symbols-outlined text-primary text-[14px]">check</span>';
+          toggleBadge.innerText = 'AKTIF';
+          toggleBadge.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+          toggleBadge.classList.add('bg-secondary-container', 'text-on-secondary-container');
+        } else {
+          toggleBtn.classList.remove('bg-primary');
+          toggleBtn.classList.add('bg-secondary-container');
+          toggleThumb.classList.remove('translate-x-6');
+          toggleThumb.classList.add('translate-x-0');
+          toggleThumb.innerHTML = '<span class="material-symbols-outlined text-secondary text-[14px]">close</span>';
+          toggleBadge.innerText = 'NONAKTIF';
+          toggleBadge.classList.remove('bg-secondary-container', 'text-on-secondary-container');
+          toggleBadge.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+        }
+      });
+    }
+
+    // 2. Test Voice Interactive Playback Simulation
+    const testBtn = document.getElementById('btn-test-voice');
+    const waveBox = document.getElementById('audio-wave-box');
+    const stopBtn = document.getElementById('btn-stop-audio');
+    const testIcon = document.getElementById('test-icon');
+    let isPlaying = false;
+    let audioTimer = null;
+
+    function playAudioSimulation() {
+      if (!waveBox || !testIcon) return;
+      isPlaying = true;
+      waveBox.classList.remove('hidden');
+      waveBox.classList.add('flex');
+      testIcon.innerText = 'graphic_eq';
+
+      // Web Speech API fallback for real merchant delight
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance("Pembayaran dua puluh sembilan ribu rupiah dari DANA Bisnis diterima!");
+        utterance.lang = 'id-ID';
+        utterance.rate = 1.0;
+        utterance.pitch = 1.0;
+        utterance.onend = stopAudioSimulation;
+        window.speechSynthesis.speak(utterance);
+      }
+
+      clearTimeout(audioTimer);
+      audioTimer = setTimeout(stopAudioSimulation, 4500);
+    }
+
+    function stopAudioSimulation() {
+      if (!waveBox || !testIcon) return;
+      isPlaying = false;
+      waveBox.classList.add('hidden');
+      waveBox.classList.remove('flex');
+      testIcon.innerText = 'record_voice_over';
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+      }
+      clearTimeout(audioTimer);
+    }
+
+    if (testBtn) {
+      testBtn.addEventListener('click', function() {
+        if (!isPlaying) {
+          playAudioSimulation();
+        } else {
+          stopAudioSimulation();
+        }
+      });
+    }
+
+    if (stopBtn) {
+      stopBtn.addEventListener('click', stopAudioSimulation);
+    }
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-4px_20px_rgba(15,23,42,0.06)]" data-active-classes="text-primary font-semibold"><div class="h-16 px-gutter flex items-center justify-around"><a aria-current="page" class="flex-1 min-h-[48px] flex flex-col items-center justify-center gap-1 transition-colors text-primary font-semibold" data-path="beranda" href="#"><span class="material-symbols-outlined text-[24px]">campaign</span><span class="font-label-sm text-label-sm">Beranda</span></a><a class="flex-1 min-h-[48px] flex flex-col items-center justify-center gap-1 text-on-surface-variant transition-colors" data-path="riwayat-transaksi" href="#"><span class="material-symbols-outlined text-[24px]">receipt_long</span><span class="font-label-sm text-label-sm">Riwayat</span></a><a class="flex-1 min-h-[48px] flex flex-col items-center justify-center gap-1 text-on-surface-variant transition-colors" data-path="pengaturan-suara" href="#"><span class="material-symbols-outlined text-[24px]">tune</span><span class="font-label-sm text-label-sm">Pengaturan</span></a></div></nav></body></html>

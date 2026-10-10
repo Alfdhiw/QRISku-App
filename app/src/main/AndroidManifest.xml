@@ -3,18 +3,24 @@
 
     <!-- Android 11+: deklarasi visibilitas layanan TTS. -->
     <queries>
+        <package android:name="id.dana" />
         <intent>
             <action android:name="android.intent.action.TTS_SERVICE" />
         </intent>
     </queries>
 
     <application
-        android:label="Qrisku PoC"
-        android:theme="@android:style/Theme.Material.Light.NoActionBar"
+        android:name=".QriskuApplication"
+        android:label="Qrisku App"
+        android:icon="@drawable/qrisku_logo"
+        android:theme="@style/Theme.Qrisku"
         android:allowBackup="false"
+        android:fullBackupContent="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
         android:supportsRtl="true">
         <activity
             android:name=".MainActivity"
+            android:theme="@style/Theme.Qrisku.Starting"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

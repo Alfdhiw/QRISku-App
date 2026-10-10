@@ -1,5 +1,7 @@
 package id.qrisku.app
 
+import id.qrisku.app.data.NotificationIdentity
+
 fun main() {
     val accepted = listOf(
         Triple("Pembayaran Masuk", "Rp29.000 diterima DANA Bisnis.", 29000L),
@@ -23,9 +25,9 @@ fun main() {
     check(IndonesianNumberWords.spell(125_000L) == "seratus dua puluh lima ribu")
     check(IndonesianNumberWords.spell(1_000_000L) == "satu juta")
     check(IndonesianNumberWords.spell(9_999_999_999L) == "sembilan miliar sembilan ratus sembilan puluh sembilan juta sembilan ratus sembilan puluh sembilan ribu sembilan ratus sembilan puluh sembilan")
-    val dedupe = NotificationDeduplicator()
-    check(dedupe.accept("key|123|first"))
-    check(!dedupe.accept("key|123|first"))
-    check(dedupe.accept("key|124|first"))
-    println("LULUS: 4 format diterima, 4 ditolak, 4 pelafalan, 3 deduplikasi.")
+    val first = NotificationIdentity.create("id.dana", "key", 123, "Pembayaran Masuk", "Rp29.000 diterima DANA Bisnis.")
+    check(first == NotificationIdentity.create("id.dana", "key", 123, "Pembayaran Masuk", "Rp29.000 diterima DANA Bisnis."))
+    check(first != NotificationIdentity.create("id.dana", "key", 124, "Pembayaran Masuk", "Rp29.000 diterima DANA Bisnis."))
+    check(first.length == 64)
+    println("LULUS: 4 format diterima, 4 ditolak, 4 pelafalan, 3 identitas notifikasi.")
 }

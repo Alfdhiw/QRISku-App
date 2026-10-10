@@ -1,0 +1,277 @@
+{
+  "projectId": "15423157619100262672",
+  "verifiedOn": "2026-10-09",
+  "timezone": "Asia/Jakarta",
+  "summary": {
+    "requestedItems": 12,
+    "downloadedSources": 12,
+    "downloadedScreenPreviews": 11,
+    "downloadedEmbeddedImages": 3,
+    "verifiedFiles": 28,
+    "totalBytes": 2115924,
+    "checks": [
+      "All referenced files exist and are non-empty",
+      "PNG/JPEG image decoding and expected format",
+      "HTML document opening and closing tags",
+      "SVG XML root validation",
+      "Strict UTF-8 decoding for HTML/SVG/Markdown",
+      "JSON parsing",
+      "SHA-256 checksum for each file"
+    ]
+  },
+  "files": [
+    {
+      "path": "01-prd/PRD_Desain_UI_UX_Qrisku_App_v1.0.md",
+      "mimeType": "text/markdown",
+      "bytes": 21601,
+      "sha256": "309771782095875cdc0b0815589f55b503e62b56c170fa79f838be7764d6b9ed",
+      "width": null,
+      "height": null,
+      "validated": true
+    },
+    {
+      "path": "02-onboarding-illustration/source.svg",
+      "mimeType": "image/svg+xml",
+      "bytes": 2537,
+      "sha256": "b752721e65de33903c1789b8be14b393e0526743150c5250245b758774ecd4f6",
+      "width": null,
+      "height": null,
+      "validated": true
+    },
+    {
+      "path": "02-onboarding-illustration/preview.png",
+      "mimeType": "image/png",
+      "bytes": 64466,
+      "sha256": "4175f3381dabcfd6e5124f7c6b540a5d3c0775fe2159398d53868d2dc7af535d",
+      "width": 800,
+      "height": 600,
+      "validated": true
+    },
+    {
+      "path": "03-s04-tts-test/source.html",
+      "mimeType": "text/html",
+      "bytes": 13786,
+      "sha256": "14843a1f7305048776c3c6673e5a05930f399807aaaea1712cc1668022afa59a",
+      "width": null,
+      "height": null,
+      "validated": true
+    },
+    {
+      "path": "03-s04-tts-test/preview.png",
+      "mimeType": "image/png",
+      "bytes": 173316,
+      "sha256": "edcd2b2e9f59952998e600fb24538f581e33a9e38585c0c748f9c458f535bc57",
+      "width": 780,
+      "height": 1994,
+      "validated": true
+    },
+    {
+      "path": "04-s02-s03-onboarding-permissions/source.html",
+      "mimeType": "text/html",
+      "bytes": 9550,
+      "sha256": "4a695557cba6fede4835f3a1863236f739ec6c986f36715f6cd48fed583c0a3e",
+      "width": null,
+      "height": null,
+      "validated": true
+    },
+    {
+      "path": "04-s02-s03-onboarding-permissions/preview.png",
+      "mimeType": "image/png",
+      "bytes": 164662,
+      "sha256": "e20e953eb201287bbcd4c2edcdb4d288557baf4abf5558fb6d03faea62d59858",
+      "width": 780,
+      "height": 1768,
+      "validated": true
+    },
+    {
+      "path": "05-s05-home/source.html",
+      "mimeType": "text/html",
+      "bytes": 20685,
+      "sha256": "5549a45f4fd285b5a11a117d7df1d6ff10e4b24a39a60cd9a9f0dea1c337d92c",
+      "width": null,
+      "height": null,
+      "validated": true
+    },
+    {
+      "path": "05-s05-home/preview.png",
+      "mimeType": "image/png",
+      "bytes": 255882,
+      "sha256": "c75f0a8766d4a42ca41e3018de562404b17e25816d992d714bfa5188d1ebe57c",
+      "width": 780,
+      "height": 2400,
+      "validated": true
+    },
+    {
+      "path": "06-s06-history/source.html",
+      "mimeType": "text/html",
+      "bytes": 33353,
+      "sha256": "25e16df004c8c0ded0a422af16b53137d1145a32d652aa432e62572bac97fc08",
+      "width": null,
+      "height": null,
+      "validated": true
+    },
+    {
+      "path": "06-s06-history/preview.png",
+      "mimeType": "image/png",
+      "bytes": 262427,
+      "sha256": "3884b970dfaec2c82819b7587267d284b839915ac0a408b96e618e5ab0cfaab8",
+      "width": 780,
+      "height": 2940,
+      "validated": true
+    },
+    {
+      "path": "07-s07-settings/source.html",
+      "mimeType": "text/html",
+      "bytes": 25928,
+      "sha256": "5ee3ae96767354fd3ba493ce27b60c19a82b60e0a95bfa482ac7782d2392d027",
+      "width": null,
+      "height": null,
+      "validated": true
+    },
+    {
+      "path": "07-s07-settings/preview.png",
+      "mimeType": "image/png",
+      "bytes": 300332,
+      "sha256": "7f88b7f2e4040b31ce103ab82db9daff9b8604d6d56196f88906fcb18aa30e0f",
+      "width": 780,
+      "height": 3656,
+      "validated": true
+    },
+    {
+      "path": "08-s06-notification-detail-a/source.html",
+      "mimeType": "text/html",
+      "bytes": 20858,
+      "sha256": "dd5cfe9f0a1e173364e83bb42229e1782377fde53471fe9ba5431e8776f03625",
+      "width": null,
+      "height": null,
+      "validated": true
+    },
+    {
+      "path": "08-s06-notification-detail-a/preview.png",
+      "mimeType": "image/png",
+      "bytes": 100849,
+      "sha256": "a910c6fa06433486eab1e1531badd37d2a088d893d14fbf278b15a50f968e3b0",
+      "width": 780,
+      "height": 1768,
+      "validated": true
+    },
+    {
+      "path": "09-s06-notification-detail-b/source.html",
+      "mimeType": "text/html",
+      "bytes": 17856,
+      "sha256": "505b761521db7259becff7bb2c1ab30e00e2f031fba998aa570a7b9b8dcc0065",
+      "width": null,
+      "height": null,
+      "validated": true
+    },
+    {
+      "path": "09-s06-notification-detail-b/preview.png",
+      "mimeType": "image/png",
+      "bytes": 159893,
+      "sha256": "08515cf25b2bd7fc0436af47f24364f08410de4240647a0568b7036e2bb468db",
+      "width": 780,
+      "height": 1768,
+      "validated": true
+    },
+    {
+      "path": "10-s07-delete-history-dialog/source.html",
+      "mimeType": "text/html",
+      "bytes": 26982,
+      "sha256": "b522057dce8469a84b7a1368a491d58a10dca202eb78de33c2b5beac976ffb0e",
+      "width": null,
+      "height": null,
+      "validated": true
+    },
+    {
+      "path": "10-s07-delete-history-dialog/preview.jpg",
+      "mimeType": "image/jpeg",
+      "bytes": 175605,
+      "sha256": "5cfbdc20de316d0babffdfafd5bf813d530d089dea262df60132f68457b7fc13",
+      "width": 585,
+      "height": 2742,
+      "validated": true
+    },
+    {
+      "path": "11-app-logo/source.svg",
+      "mimeType": "image/svg+xml",
+      "bytes": 1915,
+      "sha256": "41fe58578e9f5163c30911c81ad766c0130c3d97410dca1a4db73cff5f62956b",
+      "width": null,
+      "height": null,
+      "validated": true
+    },
+    {
+      "path": "11-app-logo/preview.png",
+      "mimeType": "image/png",
+      "bytes": 38137,
+      "sha256": "949bc04aed9362b74e82ecda1a98d5c8429413bdc5bab240a92245f881207565",
+      "width": 480,
+      "height": 480,
+      "validated": true
+    },
+    {
+      "path": "12-s01-splash/source.html",
+      "mimeType": "text/html",
+      "bytes": 9223,
+      "sha256": "46b737fd839a5d4c6be5307ac7d0acbb98725ddc12177713bab115abf13f38e5",
+      "width": null,
+      "height": null,
+      "validated": true
+    },
+    {
+      "path": "12-s01-splash/preview.png",
+      "mimeType": "image/png",
+      "bytes": 77801,
+      "sha256": "4280f2b183a703e53b1174b023907f8209b0167274b763b625ff564735b9b648",
+      "width": 780,
+      "height": 1768,
+      "validated": true
+    },
+    {
+      "path": "assets/header-logo.png",
+      "mimeType": "image/png",
+      "bytes": 6795,
+      "sha256": "504bd6f1614ee873318e6fa974f5bcd75c80676959fe78b7a8bd112ed951c6ee",
+      "width": 200,
+      "height": 200,
+      "validated": true
+    },
+    {
+      "path": "assets/onboarding-illustration.png",
+      "mimeType": "image/png",
+      "bytes": 64466,
+      "sha256": "4175f3381dabcfd6e5124f7c6b540a5d3c0775fe2159398d53868d2dc7af535d",
+      "width": 800,
+      "height": 600,
+      "validated": true
+    },
+    {
+      "path": "assets/splash-logo.png",
+      "mimeType": "image/png",
+      "bytes": 38137,
+      "sha256": "949bc04aed9362b74e82ecda1a98d5c8429413bdc5bab240a92245f881207565",
+      "width": 480,
+      "height": 480,
+      "validated": true
+    },
+    {
+      "path": "DESIGN.md",
+      "mimeType": "text/markdown",
+      "bytes": 10135,
+      "sha256": "2e58f41a6ab137ca23cb67c89087622ac978c60adc544c168af8f903383af90f",
+      "width": null,
+      "height": null,
+      "validated": true
+    },
+    {
+      "path": "project.json",
+      "mimeType": "application/json",
+      "bytes": 18747,
+      "sha256": "1b401f3980b3300841e1e94d3b8399052e6d2c639f9a9491e642fa22758430bb",
+      "width": null,
+      "height": null,
+      "validated": true
+    }
+  ]
+}
+

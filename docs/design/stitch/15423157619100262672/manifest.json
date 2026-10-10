@@ -1,0 +1,354 @@
+{
+  "project": {
+    "id": "15423157619100262672",
+    "title": "PRD UI Component Design",
+    "url": "https://stitch.withgoogle.com/projects/15423157619100262672",
+    "visibility": "PRIVATE",
+    "exportedOn": "2026-10-09",
+    "timezone": "Asia/Jakarta",
+    "createTime": "2026-10-09T13:54:22.097444Z",
+    "updateTime": "2026-10-09T15:02:22.120032Z"
+  },
+  "screens": [
+    {
+      "order": 1,
+      "id": "15369102763386810496",
+      "requestedTitle": "PRD_Desain_UI_UX_Qrisku_App_v1.0.md",
+      "title": "PRD_Desain_UI_UX_Qrisku_App_v1.0.md",
+      "resourceName": "projects/15423157619100262672/screens/15369102763386810496",
+      "width": "780",
+      "height": "1768",
+      "deviceType": null,
+      "directory": "01-prd",
+      "source": {
+        "path": "01-prd/PRD_Desain_UI_UX_Qrisku_App_v1.0.md",
+        "mimeType": "text/markdown",
+        "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBKOARIhYXBwX2NvbXBhbmlvbl91c2VyX3VwbG9hZGVkX2ZpbGVzGmkKM3VzZXJfdXBsb2FkZWRfaHRtbF8wMDA2NWQ2OGFmOTU0YTQxMDkxMDRmNGU4MTMyZWQ3OBILEgcQ24-ApZ0WGAGSASQKCnByb2plY3RfaWQSFkIUMTU0MjMxNTc2MTkxMDAyNjI2NzI&filename=&opi=89354086"
+      },
+      "screenshot": null,
+      "screenshotStatus": "not_provided_by_stitch"
+    },
+    {
+      "order": 2,
+      "id": "394fa65df03247b789c16b2cb68c7c32",
+      "requestedTitle": "Ilustrasi Onboarding Qrisku",
+      "title": "Ilustrasi Onboarding Qrisku",
+      "resourceName": "projects/15423157619100262672/screens/394fa65df03247b789c16b2cb68c7c32",
+      "width": "400",
+      "height": "300",
+      "deviceType": null,
+      "directory": "02-onboarding-illustration",
+      "source": {
+        "path": "02-onboarding-illustration/source.svg",
+        "mimeType": "image/svg+xml",
+        "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzAwMDY1ZDY4YmNiMmU4NmEwODlhZjVjZDg4MGY1MDNiEgsSBxDbj4ClnRYYAZIBJAoKcHJvamVjdF9pZBIWQhQxNTQyMzE1NzYxOTEwMDI2MjY3Mg&filename=&opi=89354086"
+      },
+      "screenshot": {
+        "path": "02-onboarding-illustration/preview.png",
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1Xch3prifXwTDaYLS9K84Fl5_YcxwzNcbiqPOsIl8aX0g11PoUaUV9u0TSeju5N3lv8VdGx4ZXuiLzrBQ-2rDZfp5UmoPGLVF6CQOP57I63XVd3gab19s5IYZhFhuGTBJrLT3K14LD92jD6iW7PCbFkhotPQc5Eqz-LaV8eVI5fOIxsoRJpNubj0zWAm5MV3anmtqJvWf0oJijaRu8UynbsmVkRy7peSGKICxbwLg_ZtB4gxfoq5sI2MzKz=s0",
+        "originalDownloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1Xch3prifXwTDaYLS9K84Fl5_YcxwzNcbiqPOsIl8aX0g11PoUaUV9u0TSeju5N3lv8VdGx4ZXuiLzrBQ-2rDZfp5UmoPGLVF6CQOP57I63XVd3gab19s5IYZhFhuGTBJrLT3K14LD92jD6iW7PCbFkhotPQc5Eqz-LaV8eVI5fOIxsoRJpNubj0zWAm5MV3anmtqJvWf0oJijaRu8UynbsmVkRy7peSGKICxbwLg_ZtB4gxfoq5sI2MzKz",
+        "mimeType": "image/png",
+        "actualWidth": 800,
+        "actualHeight": 600
+      },
+      "screenshotStatus": "available"
+    },
+    {
+      "order": 3,
+      "id": "96b95e0a4d5f4bdfa6532a5d102d85af",
+      "requestedTitle": "S-04 Onboarding Uji Suara TTS",
+      "title": "S-04 Onboarding Uji Suara TTS",
+      "resourceName": "projects/15423157619100262672/screens/96b95e0a4d5f4bdfa6532a5d102d85af",
+      "width": "780",
+      "height": "1994",
+      "deviceType": "MOBILE",
+      "directory": "03-s04-tts-test",
+      "source": {
+        "path": "03-s04-tts-test/source.html",
+        "mimeType": "text/html",
+        "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzAwMDY1ZDY4YzI1NzA2OTIwOTI1ZDQyOTRkM2I5MWNjEgsSBxDbj4ClnRYYAZIBJAoKcHJvamVjdF9pZBIWQhQxNTQyMzE1NzYxOTEwMDI2MjY3Mg&filename=&opi=89354086"
+      },
+      "screenshot": {
+        "path": "03-s04-tts-test/preview.png",
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1WTcfPe6hIMTSRv6f1mhRdg-OogQS9cHjG-QzKBkXtXCNXp2TgEm9q3t_x7jq-T4wd8ab19qhx9_CvsFE8MR1cx-F7xbSsF6olIksCtYKP0UU2GlqDd8FcnE7ED0_t-HJbqoD71-p0bnzA9xcIIINu5-imq8oGDnXWrmhssOaceIwwo0P0_SDZEKtDhVu0jmGGKCPemyHpbWdfmvD4HUgQTpFgdN5EMGf4i9njDCfiBJBHuPwIB6gJQrpI=s0",
+        "originalDownloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1WTcfPe6hIMTSRv6f1mhRdg-OogQS9cHjG-QzKBkXtXCNXp2TgEm9q3t_x7jq-T4wd8ab19qhx9_CvsFE8MR1cx-F7xbSsF6olIksCtYKP0UU2GlqDd8FcnE7ED0_t-HJbqoD71-p0bnzA9xcIIINu5-imq8oGDnXWrmhssOaceIwwo0P0_SDZEKtDhVu0jmGGKCPemyHpbWdfmvD4HUgQTpFgdN5EMGf4i9njDCfiBJBHuPwIB6gJQrpI",
+        "mimeType": "image/png",
+        "actualWidth": 780,
+        "actualHeight": 1994
+      },
+      "screenshotStatus": "available"
+    },
+    {
+      "order": 4,
+      "id": "3c9f591d923240ca81ea9aad09f44423",
+      "requestedTitle": "S-02 & S-03 Onboarding & Izin Notifikasi",
+      "title": "S-02 & S-03 Onboarding & Izin Notifikasi",
+      "resourceName": "projects/15423157619100262672/screens/3c9f591d923240ca81ea9aad09f44423",
+      "width": "780",
+      "height": "1768",
+      "deviceType": "MOBILE",
+      "directory": "04-s02-s03-onboarding-permissions",
+      "source": {
+        "path": "04-s02-s03-onboarding-permissions/source.html",
+        "mimeType": "text/html",
+        "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzAwMDY1ZDY4YzExYWUxOTgwMWE2MDk1NGYyM2I2MjZkEgsSBxDbj4ClnRYYAZIBJAoKcHJvamVjdF9pZBIWQhQxNTQyMzE1NzYxOTEwMDI2MjY3Mg&filename=&opi=89354086"
+      },
+      "screenshot": {
+        "path": "04-s02-s03-onboarding-permissions/preview.png",
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1VkY0Cb4w7xCcJoV8NZqbFd3Kk19NnMFQhokN9hMBkMzvf3ULwqb-rMKGVYsBM4joIOUyCu2RQ82cwRE25xFU0tre_7D3FBiBs66ck8lTRxkHNXDKk_ONYR0pFNVQmGlHso71jRrFVD-rr7MQAjPmyrXqM0jxGZIw_SVkwDRgi8zNA0we5cFBHuamWMciU_Q_ra71DTOgtrECXTAbVcbdH4x3Waicu-MBcP6y-gg_-MoBiCfLtiM7_U-oY=s0",
+        "originalDownloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1VkY0Cb4w7xCcJoV8NZqbFd3Kk19NnMFQhokN9hMBkMzvf3ULwqb-rMKGVYsBM4joIOUyCu2RQ82cwRE25xFU0tre_7D3FBiBs66ck8lTRxkHNXDKk_ONYR0pFNVQmGlHso71jRrFVD-rr7MQAjPmyrXqM0jxGZIw_SVkwDRgi8zNA0we5cFBHuamWMciU_Q_ra71DTOgtrECXTAbVcbdH4x3Waicu-MBcP6y-gg_-MoBiCfLtiM7_U-oY",
+        "mimeType": "image/png",
+        "actualWidth": 780,
+        "actualHeight": 1768
+      },
+      "screenshotStatus": "available"
+    },
+    {
+      "order": 5,
+      "id": "2cd0af32e68a4f399b51e33bb7ef233b",
+      "requestedTitle": "S-05 Beranda (Pemantauan Aktif)",
+      "title": "S-05 Beranda (Pemantauan Aktif)",
+      "resourceName": "projects/15423157619100262672/screens/2cd0af32e68a4f399b51e33bb7ef233b",
+      "width": "780",
+      "height": "2400",
+      "deviceType": "MOBILE",
+      "directory": "05-s05-home",
+      "source": {
+        "path": "05-s05-home/source.html",
+        "mimeType": "text/html",
+        "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzAwMDY1ZDY4YzJjMjZlODYwMjJkNTc1NjlkMTljMWNjEgsSBxDbj4ClnRYYAZIBJAoKcHJvamVjdF9pZBIWQhQxNTQyMzE1NzYxOTEwMDI2MjY3Mg&filename=&opi=89354086"
+      },
+      "screenshot": {
+        "path": "05-s05-home/preview.png",
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1X_W9Klv4kKTWOLjKkKM82gK8WI31LKtplwa8H80Wl0zIrNDOSaRafnvxtx__hohl-JwURDqmL0jkznTOmLHpy5Dn4wTFo15koMQD2DC4C5Ek7_keGCzSP3kKvixEeBOFbPeKsQw09i1t2ko4gRfWAJBg8Nbddhipu6YF9Ko1bCzuoBrxFJ5sV-kF5YoTrQYIkcX5NJGO8BzBhCgb8XD6VBXT9vF3-yCO-9NZBrpcB21q5gdjFWicjwrIU=s0",
+        "originalDownloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1X_W9Klv4kKTWOLjKkKM82gK8WI31LKtplwa8H80Wl0zIrNDOSaRafnvxtx__hohl-JwURDqmL0jkznTOmLHpy5Dn4wTFo15koMQD2DC4C5Ek7_keGCzSP3kKvixEeBOFbPeKsQw09i1t2ko4gRfWAJBg8Nbddhipu6YF9Ko1bCzuoBrxFJ5sV-kF5YoTrQYIkcX5NJGO8BzBhCgb8XD6VBXT9vF3-yCO-9NZBrpcB21q5gdjFWicjwrIU",
+        "mimeType": "image/png",
+        "actualWidth": 780,
+        "actualHeight": 2400
+      },
+      "screenshotStatus": "available"
+    },
+    {
+      "order": 6,
+      "id": "4c4102cd6fa749479290dbfde1f0f84a",
+      "requestedTitle": "S-06 Riwayat Notifikasi",
+      "title": "S-06 Riwayat Notifikasi",
+      "resourceName": "projects/15423157619100262672/screens/4c4102cd6fa749479290dbfde1f0f84a",
+      "width": "780",
+      "height": "2940",
+      "deviceType": "MOBILE",
+      "directory": "06-s06-history",
+      "source": {
+        "path": "06-s06-history/source.html",
+        "mimeType": "text/html",
+        "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzAwMDY1ZDY4YzQwYjdiY2IwODlhZjcyNjIyMTdmZjQ5EgsSBxDbj4ClnRYYAZIBJAoKcHJvamVjdF9pZBIWQhQxNTQyMzE1NzYxOTEwMDI2MjY3Mg&filename=&opi=89354086"
+      },
+      "screenshot": {
+        "path": "06-s06-history/preview.png",
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1VccZxz9qkgZ9JgRPHw97K97Xa9JL471CsuEyavPHo84_k4smVI_b3xK5F4diNWqUhUAhQGaiiGZDZ3JHIHZxSt57AOfYLaeXe_nsRsZ-PFmk1U2iTrpG47osr_5ItWOjSUJJFqj80oOj2uraYW64Rgo02-Jeqjc19P9XPb8dOacwUZhVLXONBsuuYAccqC59hmWKhqjtCV0e6GgTo9jqO0npxP4dWE_n0aysAPZvWtUuV-ii2XeIJrFy3t=s0",
+        "originalDownloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1VccZxz9qkgZ9JgRPHw97K97Xa9JL471CsuEyavPHo84_k4smVI_b3xK5F4diNWqUhUAhQGaiiGZDZ3JHIHZxSt57AOfYLaeXe_nsRsZ-PFmk1U2iTrpG47osr_5ItWOjSUJJFqj80oOj2uraYW64Rgo02-Jeqjc19P9XPb8dOacwUZhVLXONBsuuYAccqC59hmWKhqjtCV0e6GgTo9jqO0npxP4dWE_n0aysAPZvWtUuV-ii2XeIJrFy3t",
+        "mimeType": "image/png",
+        "actualWidth": 780,
+        "actualHeight": 2940
+      },
+      "screenshotStatus": "available"
+    },
+    {
+      "order": 7,
+      "id": "27d046adce1a42579939450deffb0d94",
+      "requestedTitle": "S-07 Pengaturan Suara & Izin",
+      "title": "S-07 Pengaturan Suara & Izin",
+      "resourceName": "projects/15423157619100262672/screens/27d046adce1a42579939450deffb0d94",
+      "width": "780",
+      "height": "3656",
+      "deviceType": "MOBILE",
+      "directory": "07-s07-settings",
+      "source": {
+        "path": "07-s07-settings/source.html",
+        "mimeType": "text/html",
+        "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzAwMDY1ZDY4YzJiNzJiZDEwMmQzZTZkNWRjMGQ1ZTk4EgsSBxDbj4ClnRYYAZIBJAoKcHJvamVjdF9pZBIWQhQxNTQyMzE1NzYxOTEwMDI2MjY3Mg&filename=&opi=89354086"
+      },
+      "screenshot": {
+        "path": "07-s07-settings/preview.png",
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1WLFlyFXiu6tPtho0-dD59NY1iNkqEFzbTjIJBonN8zsrxsUD8jSYsUb4siKRm7tIWIj-GFtafsfoQDlv-eyxHiphcR1-Gyitix8Rr9n9pdlopqMBpfDfYojN0YOxsVCXcSWau5Vqm_sVeBNkzEu58G9wKIHqmVIIGBVn7IqdcYJ4xVd1PkE70ABaLEZaR0o7I8OA-wKpKoZj3zqGCwd9nxsMBSu6xVS0sLrftQlipAuvn9w83gMlwvJyM=s0",
+        "originalDownloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1WLFlyFXiu6tPtho0-dD59NY1iNkqEFzbTjIJBonN8zsrxsUD8jSYsUb4siKRm7tIWIj-GFtafsfoQDlv-eyxHiphcR1-Gyitix8Rr9n9pdlopqMBpfDfYojN0YOxsVCXcSWau5Vqm_sVeBNkzEu58G9wKIHqmVIIGBVn7IqdcYJ4xVd1PkE70ABaLEZaR0o7I8OA-wKpKoZj3zqGCwd9nxsMBSu6xVS0sLrftQlipAuvn9w83gMlwvJyM",
+        "mimeType": "image/png",
+        "actualWidth": 780,
+        "actualHeight": 3656
+      },
+      "screenshotStatus": "available"
+    },
+    {
+      "order": 8,
+      "id": "c494f7b7fd5f43229733b3ad45765b8f",
+      "requestedTitle": "S-06 Detail Notifikasi (Bottom Sheet)",
+      "title": "S-06 Detail Notifikasi (Bottom Sheet)",
+      "resourceName": "projects/15423157619100262672/screens/c494f7b7fd5f43229733b3ad45765b8f",
+      "width": "780",
+      "height": "1768",
+      "deviceType": "MOBILE",
+      "directory": "08-s06-notification-detail-a",
+      "source": {
+        "path": "08-s06-notification-detail-a/source.html",
+        "mimeType": "text/html",
+        "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzAwMDY1ZDY4ZDE4OWIxODQwMjA3OTBhYWEwMGVjYmI3EgsSBxDbj4ClnRYYAZIBJAoKcHJvamVjdF9pZBIWQhQxNTQyMzE1NzYxOTEwMDI2MjY3Mg&filename=&opi=89354086"
+      },
+      "screenshot": {
+        "path": "08-s06-notification-detail-a/preview.png",
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1WEOacrr_odjiz8OMpOcBrW2prx0HL8BPTtYtXnaKC8eCLFnWi749JGNrO1cQEQLIv63uSPz_kx8IFGF5aksei0Jg7T-LDvZpXWdnhTXt9lc5Ngi0JryVFO9SHI0mfEcwZjjWrUivxhXU9hfYhY7c431oNSw46gs7FiG_f0Iwu3SeaM_oMjQa91IWx92mk5OpKkhvjSBQSY5iXZsgeL-r_jrjP-laeaET_OSuLWF9AacZtnCNz2cnoZadc=s0",
+        "originalDownloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1WEOacrr_odjiz8OMpOcBrW2prx0HL8BPTtYtXnaKC8eCLFnWi749JGNrO1cQEQLIv63uSPz_kx8IFGF5aksei0Jg7T-LDvZpXWdnhTXt9lc5Ngi0JryVFO9SHI0mfEcwZjjWrUivxhXU9hfYhY7c431oNSw46gs7FiG_f0Iwu3SeaM_oMjQa91IWx92mk5OpKkhvjSBQSY5iXZsgeL-r_jrjP-laeaET_OSuLWF9AacZtnCNz2cnoZadc",
+        "mimeType": "image/png",
+        "actualWidth": 780,
+        "actualHeight": 1768
+      },
+      "screenshotStatus": "available"
+    },
+    {
+      "order": 9,
+      "id": "e3922dbff2324d6ba1010a221ba8b2c3",
+      "requestedTitle": "S-06 Detail Notifikasi (Bottom Sheet)",
+      "title": "S-06 Detail Notifikasi (Bottom Sheet)",
+      "resourceName": "projects/15423157619100262672/screens/e3922dbff2324d6ba1010a221ba8b2c3",
+      "width": "780",
+      "height": "1768",
+      "deviceType": "MOBILE",
+      "directory": "09-s06-notification-detail-b",
+      "source": {
+        "path": "09-s06-notification-detail-b/source.html",
+        "mimeType": "text/html",
+        "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzAwMDY1ZDY4ZDQ3MzQwZjkwMDMwM2VjOTcyMjE0YzgwEgsSBxDbj4ClnRYYAZIBJAoKcHJvamVjdF9pZBIWQhQxNTQyMzE1NzYxOTEwMDI2MjY3Mg&filename=&opi=89354086"
+      },
+      "screenshot": {
+        "path": "09-s06-notification-detail-b/preview.png",
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1UCdAdbo4pX2BuyCNyZbuI9mLHlsUZQt1YcO6H9eA_Fil_ohW4EYBRlMfAOxUfEgRzjwZSBrqXed4810uNsi52oBp81lx63G-67EkG0O6PtfQJSk1xqsr-lvOUxlo_NiS0o1K3xMAT5l1VHiN0rMNVLuFmDmPLgnlKqJ0W_kzGQVfptEewDXJv6_ENRM6UoHfIXMnRRIDf36kjC0LSHOrh5wg3gB17X8q8Pj04fwjy6lWRX3geJ5e9nvR-k=s0",
+        "originalDownloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1UCdAdbo4pX2BuyCNyZbuI9mLHlsUZQt1YcO6H9eA_Fil_ohW4EYBRlMfAOxUfEgRzjwZSBrqXed4810uNsi52oBp81lx63G-67EkG0O6PtfQJSk1xqsr-lvOUxlo_NiS0o1K3xMAT5l1VHiN0rMNVLuFmDmPLgnlKqJ0W_kzGQVfptEewDXJv6_ENRM6UoHfIXMnRRIDf36kjC0LSHOrh5wg3gB17X8q8Pj04fwjy6lWRX3geJ5e9nvR-k",
+        "mimeType": "image/png",
+        "actualWidth": 780,
+        "actualHeight": 1768
+      },
+      "screenshotStatus": "available"
+    },
+    {
+      "order": 10,
+      "id": "26ae97e8f4b247f2b36968c8d97760c5",
+      "requestedTitle": "S-07 Dialog Konfirmasi Hapus Riwayat",
+      "title": "S-07 Dialog Konfirmasi Hapus Riwayat",
+      "resourceName": "projects/15423157619100262672/screens/26ae97e8f4b247f2b36968c8d97760c5",
+      "width": "780",
+      "height": "3656",
+      "deviceType": "MOBILE",
+      "directory": "10-s07-delete-history-dialog",
+      "source": {
+        "path": "10-s07-delete-history-dialog/source.html",
+        "mimeType": "text/html",
+        "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzAwMDY1ZDY4ZGYyOTg5ZDcwOTI1ZDQyOTRkM2I5MWNjEgsSBxDbj4ClnRYYAZIBJAoKcHJvamVjdF9pZBIWQhQxNTQyMzE1NzYxOTEwMDI2MjY3Mg&filename=&opi=89354086"
+      },
+      "screenshot": {
+        "path": "10-s07-delete-history-dialog/preview.jpg",
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1UlqoDmg_4AxGFai-z9sH0G8E37I0WYetzWXjXSqnzVfe9y0_3PmCknmjVR0vE5Cp2ayCekLbADmIpglQZ-IMMXrKMyuul2w9ZU75477MTllwx9jLxl7XXHfgLNqZeosi3uGW54AUwEpDR1DTvAaCf4ITJyPLC1auCWQ3NztSSRSNLJutioOSLxIB1R2r6F4slATL_opiPrV7nRQA_b4zYKgq7EUdvHPacdRjQpwtCbcItORMl72w5Oc50=s0",
+        "originalDownloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1UlqoDmg_4AxGFai-z9sH0G8E37I0WYetzWXjXSqnzVfe9y0_3PmCknmjVR0vE5Cp2ayCekLbADmIpglQZ-IMMXrKMyuul2w9ZU75477MTllwx9jLxl7XXHfgLNqZeosi3uGW54AUwEpDR1DTvAaCf4ITJyPLC1auCWQ3NztSSRSNLJutioOSLxIB1R2r6F4slATL_opiPrV7nRQA_b4zYKgq7EUdvHPacdRjQpwtCbcItORMl72w5Oc50",
+        "mimeType": "image/jpeg",
+        "actualWidth": 585,
+        "actualHeight": 2742
+      },
+      "screenshotStatus": "available"
+    },
+    {
+      "order": 11,
+      "id": "a7b57c96c1fb4e08b4c895eacc62cc16",
+      "requestedTitle": "Generating Image...",
+      "title": "Logo Resmi Qrisku App",
+      "resourceName": "projects/15423157619100262672/screens/a7b57c96c1fb4e08b4c895eacc62cc16",
+      "width": "240",
+      "height": "240",
+      "deviceType": null,
+      "directory": "11-app-logo",
+      "source": {
+        "path": "11-app-logo/source.svg",
+        "mimeType": "image/svg+xml",
+        "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzAwMDY1ZDY5OWZmYTczYmYwMmE5OWZhOGZkMTIzMGI3EgsSBxDbj4ClnRYYAZIBJAoKcHJvamVjdF9pZBIWQhQxNTQyMzE1NzYxOTEwMDI2MjY3Mg&filename=&opi=89354086"
+      },
+      "screenshot": {
+        "path": "11-app-logo/preview.png",
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1VAodBkWTLiBX0k-Mqertm8cbLBf5T6taXfLJlEq9O6O6O_THMe_OIP_cyoLmiVE5RSMw5s9pBG1zx-B01BAdE6Qy0Fz7nDBXEQ1_WzPcCSZMWFRU91SFdCnHHhQwwoof7wl5nYtrciOBf9Dz0HH4Y6KLoW3nKEAhnZ8bpyQHxwY6W1Wx2CMdXOjUDH-VVGaV7mDw1ShbvLUDFPty5qtvLrIzrByStyyCm63XPT3sMWPEA6ze__hpg8IbKY=s0",
+        "originalDownloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1VAodBkWTLiBX0k-Mqertm8cbLBf5T6taXfLJlEq9O6O6O_THMe_OIP_cyoLmiVE5RSMw5s9pBG1zx-B01BAdE6Qy0Fz7nDBXEQ1_WzPcCSZMWFRU91SFdCnHHhQwwoof7wl5nYtrciOBf9Dz0HH4Y6KLoW3nKEAhnZ8bpyQHxwY6W1Wx2CMdXOjUDH-VVGaV7mDw1ShbvLUDFPty5qtvLrIzrByStyyCm63XPT3sMWPEA6ze__hpg8IbKY",
+        "mimeType": "image/png",
+        "actualWidth": 480,
+        "actualHeight": 480
+      },
+      "screenshotStatus": "available"
+    },
+    {
+      "order": 12,
+      "id": "55dae19ea25a4b97a8b0e119f33c0baa",
+      "requestedTitle": "Generating Screen...",
+      "title": "S-01 Splash Screen",
+      "resourceName": "projects/15423157619100262672/screens/55dae19ea25a4b97a8b0e119f33c0baa",
+      "width": "780",
+      "height": "1768",
+      "deviceType": "MOBILE",
+      "directory": "12-s01-splash",
+      "source": {
+        "path": "12-s01-splash/source.html",
+        "mimeType": "text/html",
+        "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzAwMDY1ZDY5YTE2YWYyMTcwNTRjZmNiNDI1MzE1MDk4EgsSBxDbj4ClnRYYAZIBJAoKcHJvamVjdF9pZBIWQhQxNTQyMzE1NzYxOTEwMDI2MjY3Mg&filename=&opi=89354086"
+      },
+      "screenshot": {
+        "path": "12-s01-splash/preview.png",
+        "downloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1WQrRUQZdQIdY8PAQVInkRpqr6u9enEfkeERo16hB_l2gYkFW_ni5VhIRgGrcUSgbnp70wMID_tHOD-jYti5Kx0T5qHfaMFJQRXDH_RmfUaqo-miwTuqz_gs3iqO72BK9R-67adIusKrzJVqfCkpR4HZSmhejS-Cipqr8j5KZlYWB4tKwsmBpuM6iKKe1YfkdT_ZoD8oeDE5tYOG9MxrPln5vAIdaSOqeS3pTV6olADjkAEBcI3l3iYO4Vr=s0",
+        "originalDownloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1WQrRUQZdQIdY8PAQVInkRpqr6u9enEfkeERo16hB_l2gYkFW_ni5VhIRgGrcUSgbnp70wMID_tHOD-jYti5Kx0T5qHfaMFJQRXDH_RmfUaqo-miwTuqz_gs3iqO72BK9R-67adIusKrzJVqfCkpR4HZSmhejS-Cipqr8j5KZlYWB4tKwsmBpuM6iKKe1YfkdT_ZoD8oeDE5tYOG9MxrPln5vAIdaSOqeS3pTV6olADjkAEBcI3l3iYO4Vr",
+        "mimeType": "image/png",
+        "actualWidth": 780,
+        "actualHeight": 1768
+      },
+      "screenshotStatus": "available"
+    }
+  ],
+  "assets": [
+    {
+      "name": "header-logo",
+      "path": "assets/header-logo.png",
+      "mimeType": "image/png",
+      "originalDownloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1XgO2k4P9GWbc82yok7VRhgo5oHP81hFjFtk-758EZrRTeaBxol6ZE0PS-j2rOT3chCpL9-m3NggI9_mcD0OcOo1hTJ37g1UfYUTr0S7a4G2rcjdJVYNwutbF6KS94zijTXanf8NZ8fC45lyf2olpz2n4J-I3YBMN13ftRNPfxzBhJ8hKqADS262ncTWpfJTqCPLb0QL8zEu79GSmN6ulZ5I52-39LwDitCcNypprI_MZOJk0YgI2gmwptI",
+      "downloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1XgO2k4P9GWbc82yok7VRhgo5oHP81hFjFtk-758EZrRTeaBxol6ZE0PS-j2rOT3chCpL9-m3NggI9_mcD0OcOo1hTJ37g1UfYUTr0S7a4G2rcjdJVYNwutbF6KS94zijTXanf8NZ8fC45lyf2olpz2n4J-I3YBMN13ftRNPfxzBhJ8hKqADS262ncTWpfJTqCPLb0QL8zEu79GSmN6ulZ5I52-39LwDitCcNypprI_MZOJk0YgI2gmwptI=s0",
+      "usedBy": [
+        "04-s02-s03-onboarding-permissions",
+        "05-s05-home",
+        "06-s06-history",
+        "07-s07-settings",
+        "08-s06-notification-detail-a",
+        "09-s06-notification-detail-b",
+        "10-s07-delete-history-dialog"
+      ],
+      "actualWidth": 200,
+      "actualHeight": 200
+    },
+    {
+      "name": "onboarding-illustration",
+      "path": "assets/onboarding-illustration.png",
+      "mimeType": "image/png",
+      "originalDownloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1XwjKbiTxIp4qRd7QUd7Kn48M3BqgRvgp3xhRCQP_MxOm5vtvqzo2HuojQ6t8UN7QwseHUSB1Bo-X3yjle0LRE_nDvsMDk3xqjzgJUOYez08XxQ1YHXw9M6OjiFco_Er2fzNCpudCwSny6zH6lyz4ZzvhEtUrj58klEqpelipu0c2SX4EGFxhFXDzvLjfoKJwDgXtuaKTqdMFPvr-RDo73OY62NDrcUvPTeS_Mtzmv9ql1vjOz9ilaGxWwI",
+      "downloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1XwjKbiTxIp4qRd7QUd7Kn48M3BqgRvgp3xhRCQP_MxOm5vtvqzo2HuojQ6t8UN7QwseHUSB1Bo-X3yjle0LRE_nDvsMDk3xqjzgJUOYez08XxQ1YHXw9M6OjiFco_Er2fzNCpudCwSny6zH6lyz4ZzvhEtUrj58klEqpelipu0c2SX4EGFxhFXDzvLjfoKJwDgXtuaKTqdMFPvr-RDo73OY62NDrcUvPTeS_Mtzmv9ql1vjOz9ilaGxWwI=s0",
+      "usedBy": [
+        "04-s02-s03-onboarding-permissions"
+      ],
+      "actualWidth": 800,
+      "actualHeight": 600
+    },
+    {
+      "name": "splash-logo",
+      "path": "assets/splash-logo.png",
+      "mimeType": "image/png",
+      "originalDownloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1XLC5ccbKTnUpFEjAMDP3q6mJ82kj8bOjHktNy8SN9XmR9fEezznAGKG-ZmZaboNw2SlgukoV3tVrexjcA-QJWtv8cUJNFcErtcjm9eWm-dq6lLViZELVjT3a2EH5DDx0I8pCLnsyrkayfwy1pGMPHbgNW8JDSCZk7On7uHSAovwFi8ggXdXLTPInDMCfV6VrnRVnjzBSEdIBIhivPaKenrnScjjoaH0qdy0kBv3xClK4FowyVkZp8hGAI",
+      "downloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1XLC5ccbKTnUpFEjAMDP3q6mJ82kj8bOjHktNy8SN9XmR9fEezznAGKG-ZmZaboNw2SlgukoV3tVrexjcA-QJWtv8cUJNFcErtcjm9eWm-dq6lLViZELVjT3a2EH5DDx0I8pCLnsyrkayfwy1pGMPHbgNW8JDSCZk7On7uHSAovwFi8ggXdXLTPInDMCfV6VrnRVnjzBSEdIBIhivPaKenrnScjjoaH0qdy0kBv3xClK4FowyVkZp8hGAI=s0",
+      "usedBy": [
+        "12-s01-splash"
+      ],
+      "actualWidth": 480,
+      "actualHeight": 480
+    }
+  ],
+  "downloadMethod": "curl.exe -f -L",
+  "screenshotSizing": "Google FIFE =s0 (original hosted image resolution)"
+}
+
