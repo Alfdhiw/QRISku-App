@@ -4,11 +4,47 @@ Aplikasi Native Android (Kotlin + Jetpack Compose) untuk mendeteksi notifikasi p
 
 ## Menjalankan aplikasi
 
-Buka folder project ini di Android Studio, lalu sync Gradle. Project memakai AGP 9.2.0, Kotlin Compose 2.2.10, Gradle Wrapper 9.4.1, compile SDK 37, target SDK 36, dan minimum Android 8 (API 26). Lokasi SDK dikonfigurasi di `local.properties` yang tidak masuk Git.
+Clone repository, lalu pilih **Open** di Android Studio dan buka folder root yang berisi `settings.gradle.kts`. Tidak perlu membuat project Empty Activity baru. Repository sudah menyertakan Gradle Wrapper (`gradlew`, `gradlew.bat`, dan `gradle/wrapper/`) dengan versi Gradle yang ditetapkan untuk proyek ini.
+
+| Komponen | Versi |
+| --- | --- |
+| Android Gradle Plugin (AGP) | 9.2.0 |
+| Gradle Wrapper | 9.4.1 |
+| JDK untuk Gradle | 17 atau versi kompatibel yang disertakan Android Studio |
+| Compile SDK | Android API 37 |
+| Target SDK | Android API 36 |
+| Minimum Android | Android 8 / API 26 |
+| SDK Build Tools | 36.0.0 |
+| Kotlin Compose plugin | 2.2.10 |
+| Compose BOM | 2026.09.00 |
+
+AGP 9.2.0 memerlukan Gradle minimal 9.4.1. Lihat [kompatibilitas resmi AGP](https://developer.android.com/build/releases/agp-9-2-0-release-notes). Wrapper menetapkan versi tersebut dan memverifikasi checksum unduhan Gradle.
+
+JAR wrapper juga memakai versi 9.4.1; checksum-nya dapat dibandingkan dengan [checksum resmi Gradle](https://gradle.org/release-checksums/). Perbarui JAR, kedua script launcher, dan properties sebagai satu paket saat mengganti versi wrapper.
+
+Di **Settings → Build, Execution, Deployment → Build Tools → Gradle**, pilih distribusi Gradle dari **Wrapper** jika pilihan tersebut tersedia. Pilih **Gradle JDK** yang kompatibel (JDK 17 atau JDK bawaan Android Studio yang didukung Gradle 9.4.1). Instal Android SDK Platform 37 dan SDK Build Tools 36.0.0 melalui SDK Manager, lalu pilih **File → Sync Project with Gradle Files**. Sinkronisasi pertama memerlukan koneksi internet untuk mengunduh Gradle dan dependencies.
+
+Untuk memeriksa versi dan membuat APK debug dari terminal di root repository:
 
 ```powershell
+.\gradlew.bat --version
 .\gradlew.bat :app:assembleDebug
 ```
+
+Di Linux/macOS, gunakan `./gradlew --version` dan `./gradlew :app:assembleDebug`. Terminal memerlukan `JAVA_HOME` atau `java` pada `PATH`; lokasi SDK dapat ditetapkan melalui `local.properties` yang dibuat Android Studio. APK debug berada di `app/build/outputs/apk/debug/app-debug.apk` setelah build berhasil.
+
+### Jika sebelumnya muncul error Gradle 9.3.0
+
+Ambil perubahan terbaru dari branch `master`. Pastikan `gradle/wrapper/gradle-wrapper.properties` berisi:
+
+```properties
+distributionUrl=https\://services.gradle.org/distributions/gradle-9.4.1-bin.zip
+distributionSha256Sum=2ab2958f2a1e51120c326cad6f385153bb11ee93b3c216c5fccebfdfbb7ec6cb
+```
+
+Kemudian lakukan **Sync Project with Gradle Files**. Jika mengedit wrapper lokal yang sudah ada, sesuaikan juga `distributionSha256Sum` bila properti tersebut tersedia agar checksum tidak masih mengacu pada Gradle 9.3.0.
+
+### Pengaturan pertama
 
 APK debug: `app/build/outputs/apk/debug/app-debug.apk`.
 
@@ -39,6 +75,8 @@ Preferensi suara dan penyelesaian onboarding disimpan di SharedPreferences. List
 Riwayat disimpan sampai dihapus pengguna. Retensi 30 hari dalam PRD masih berupa usulan dan belum diaktifkan. Cache teknis deduplikasi dibatasi 4.096 event dan dipertahankan setelah hapus riwayat. Callback terlambat tidak bisa membuat kembali record yang dihapus. Backup cloud dan transfer data Android dikecualikan.
 
 Tidak ada backend atau permission INTERNET. Engine hanya memilih voice Indonesia yang tersedia lokal dan tidak membutuhkan jaringan. Pasang paket suara lewat pengaturan TTS perangkat jika belum tersedia.
+
+`BIND_NOTIFICATION_LISTENER_SERVICE` adalah izin layanan khusus melalui Settings Android, bukan dialog runtime `POST_NOTIFICATIONS`.
 
 ## Acuan implementasi
 
@@ -71,6 +109,12 @@ Jika sertifikat repositori sudah dipercaya Windows tetapi Java lokal gagal memva
 ```
 
 ## Validasi perangkat nyata
+
+1. Jalankan aplikasi di perangkat uji yang memiliki DANA dengan DANA Bisnis aktif.
+2. Aktifkan akses notifikasi melalui Qrisku, lalu kembali dan periksa status pemantauan.
+3. Tekan **Uji Suara** untuk mengecek voice Bahasa Indonesia offline, volume media, dan output audio.
+4. Pada pengujian pembayaran yang disetujui pemilik akun, amati suara, **Notifikasi terakhir**, serta **Riwayat Notifikasi**. Konfirmasi status pembayaran di DANA.
+5. Untuk pemeriksaan koneksi layanan, gunakan filter Logcat `Qrisku`; jangan mencatat isi notifikasi mentah.
 
 Uji akses ditolak/dicabut, dua pembayaran nominal sama, update notifikasi, layar mati, app tidak terbuka, volume nol, TTS offline tidak tersedia, dan suara otomatis dimatikan saat ada antrean. Notifikasi yang tidak diterima ketika listener terputus tidak dikejar ulang.
 
