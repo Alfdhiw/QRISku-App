@@ -33,7 +33,10 @@ class MainActivity : ComponentActivity() {
             navigationBarStyle = SystemBarStyle.light(Color.TRANSPARENT, Color.rgb(15, 23, 42)))
         volumeControlStream = AudioManager.STREAM_MUSIC
         val actions = DeviceActions(
-            permission = { openSettings(Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS)) },
+            permission = { openSettings(*NotificationAccessSettings.permissionScreens(this).toTypedArray()) },
+            applicationInfo = { openSettings(NotificationAccessSettings.applicationInfo(packageName)) },
+            applicationList = { openSettings(*NotificationAccessSettings.applicationListScreens().toTypedArray()) },
+            androidSettings = { openSettings(Intent(Settings.ACTION_SETTINGS)) },
             voiceSettings = { openSettings(Intent("com.android.settings.TTS_SETTINGS")) },
             volumeSettings = { openSettings(Intent(Settings.ACTION_SOUND_SETTINGS)) },
             batterySettings = { openSettings(Intent(Settings.ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS)) },
@@ -48,7 +51,7 @@ class MainActivity : ComponentActivity() {
             repeatOnLifecycle(Lifecycle.State.RESUMED) {
                 while (isActive) {
                     // Refresh hardware volume and permission only while the screen is visible.
-                    controller.refreshDevice()
+                    controller.reconnectListener()
                     delay(2_000)
                 }
             }
@@ -57,16 +60,21 @@ class MainActivity : ComponentActivity() {
 
     override fun onResume() {
         super.onResume()
-        controller.refreshDevice()
+        controller.reconnectListener()
     }
 
-    private fun openSettings(intent: Intent) {
-        try {
-            startActivity(intent)
-        } catch (_: ActivityNotFoundException) {
-            Toast.makeText(this, "Pengaturan ini tidak tersedia pada perangkat. Buka Pengaturan Android.", Toast.LENGTH_LONG).show()
-        } catch (_: SecurityException) {
-            Toast.makeText(this, "Pengaturan belum dapat dibuka. Buka Pengaturan Android secara manual.", Toast.LENGTH_LONG).show()
+    private fun openSettings(vararg intents: Intent) {
+        for (intent in intents) {
+            try {
+                startActivity(intent)
+                return
+            } catch (_: ActivityNotFoundException) {
+                // Some manufacturers do not implement the app-specific Settings screen.
+            } catch (_: SecurityException) {
+                // Try another public screen without bypassing Android's protection.
+            }
         }
+        Toast.makeText(this, "Pengaturan ini belum dapat dibuka. Buka Pengaturan Android secara manual.",
+            Toast.LENGTH_LONG).show()
     }
 }

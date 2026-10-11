@@ -2,6 +2,8 @@ package id.qrisku.app.ui.settings
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
@@ -17,7 +19,9 @@ fun SettingsScreen(device: DeviceState, preferences: VoicePreferences, history: 
                    speech: SpeechState, onAutomatic: (Boolean) -> Unit, onRate: (Float) -> Unit,
                    onTest: () -> Unit, onStop: () -> Unit, onRetryVoice: () -> Unit,
                    onVoiceSettings: () -> Unit, onVolumeSettings: () -> Unit,
-                   onPermission: () -> Unit, onBatterySettings: () -> Unit, onClear: () -> Unit,
+                   onPermission: () -> Unit, onPermissionHelp: () -> Unit,
+                   onAndroidSettings: () -> Unit,
+                   onBatterySettings: () -> Unit, onClear: () -> Unit,
                    onRetryHistory: () -> Unit) {
     var showDelete by remember { mutableStateOf(false) }
     LazyColumn(Modifier.fillMaxSize(), contentPadding = PaddingValues(20.dp),
@@ -52,6 +56,12 @@ fun SettingsScreen(device: DeviceState, preferences: VoicePreferences, history: 
                 Text(if (device.listenerConnected) "Layanan pemantauan terhubung"
                     else "Layanan pemantauan belum terhubung", style = MaterialTheme.typography.bodyMedium)
                 SecondaryAction("Periksa Akses Notifikasi", onPermission)
+                if (!device.notificationAccess && device.supportsRestrictedSettings) {
+                    SecondaryAction("Akses diblokir Android?", onPermissionHelp)
+                }
+                if (device.notificationAccess && !device.listenerConnected) {
+                    ListenerRecoveryHelp(onAndroidSettings)
+                }
                 Text("Jika notifikasi tidak terbaca, periksa akses dan pembatasan baterai aplikasi. " +
                     "Pengaturan dapat berbeda pada setiap HP.", style = MaterialTheme.typography.bodyMedium)
                 SecondaryAction("Pengaturan Baterai", onBatterySettings)
@@ -85,7 +95,8 @@ fun SettingsScreen(device: DeviceState, preferences: VoicePreferences, history: 
     if (showDelete) {
         AlertDialog(onDismissRequest = { showDelete = false },
             title = { Text("Hapus semua riwayat?") },
-            text = { Text("Semua riwayat notifikasi pada perangkat ini akan dihapus. Pengaturan suara tetap disimpan.") },
+            text = { Text("Semua riwayat notifikasi pada perangkat ini akan dihapus. Pengaturan suara tetap disimpan.",
+                modifier = Modifier.verticalScroll(rememberScrollState())) },
             confirmButton = {
                 TextButton(onClick = { showDelete = false; onClear() },
                     colors = ButtonDefaults.textButtonColors(contentColor = QriskuColors.Error)) {

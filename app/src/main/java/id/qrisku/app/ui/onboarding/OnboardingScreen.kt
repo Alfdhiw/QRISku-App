@@ -18,6 +18,7 @@ import id.qrisku.app.ui.theme.QriskuColors
 
 @Composable
 fun OnboardingScreen(device: DeviceState, speech: SpeechState, onPermission: () -> Unit,
+                     onPermissionHelp: () -> Unit,
                      onTest: () -> Unit, onStop: () -> Unit, onRetryVoice: () -> Unit,
                      onVoiceSettings: () -> Unit, onFinish: () -> Unit) {
     var step by rememberSaveable { mutableIntStateOf(0) }
@@ -63,7 +64,13 @@ fun OnboardingScreen(device: DeviceState, speech: SpeechState, onPermission: () 
                         InfoNotice("Akses notifikasi sudah diberikan.")
                         Spacer(Modifier.height(16.dp))
                         PrimaryAction("Lanjut ke Uji Suara", { step = 2 })
-                    } else PrimaryAction("Buka Pengaturan Akses", onPermission)
+                    } else {
+                        PrimaryAction("Buka Pengaturan Akses", onPermission)
+                        if (device.supportsRestrictedSettings) {
+                            Spacer(Modifier.height(12.dp))
+                            SecondaryAction("Akses diblokir Android?", onPermissionHelp)
+                        }
+                    }
                     Spacer(Modifier.height(12.dp))
                     SecondaryAction("Nanti Saja", onFinish)
                 }

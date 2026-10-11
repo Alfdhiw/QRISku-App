@@ -14,14 +14,18 @@ import id.qrisku.app.ui.theme.QriskuColors
 
 @Composable
 fun HomeScreen(device: DeviceState, preferences: VoicePreferences, history: HistoryState,
-               speech: SpeechState, onPermission: () -> Unit, onAutomatic: (Boolean) -> Unit,
+               speech: SpeechState, onPermission: () -> Unit, onPermissionHelp: () -> Unit,
+               onAndroidSettings: () -> Unit,
+               onAutomatic: (Boolean) -> Unit,
                onTest: () -> Unit, onStop: () -> Unit, onRetryVoice: () -> Unit,
                onVoiceSettings: () -> Unit, onHistory: () -> Unit, onRetryHistory: () -> Unit) {
     LazyColumn(Modifier.fillMaxSize(), contentPadding = PaddingValues(20.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp)) {
         item {
             MonitoringStatusCard(monitoringStatus(device.notificationAccess, device.listenerConnected,
-                preferences.automatic), onPermission)
+                preferences.automatic), onPermission,
+                onPermissionHelp.takeIf { device.supportsRestrictedSettings && !device.notificationAccess },
+                onAndroidSettings)
         }
         item { AutoVoiceToggle(preferences.automatic, onAutomatic) }
         item { VoiceTestCard(speech, device.mediaVolume, onTest, onStop, onRetryVoice, onVoiceSettings) }
@@ -52,7 +56,8 @@ fun HomeScreen(device: DeviceState, preferences: VoicePreferences, history: Hist
 }
 
 @Composable
-fun MonitoringStatusCard(status: MonitoringStatus, onPermission: () -> Unit) {
+fun MonitoringStatusCard(status: MonitoringStatus, onPermission: () -> Unit,
+                         onPermissionHelp: (() -> Unit)? = null, onAndroidSettings: () -> Unit) {
     val ready = status == MonitoringStatus.ACTIVE || status == MonitoringStatus.ACTIVE_MUTED
     QriskuCard(color = if (ready) QriskuColors.PrimarySoft else QriskuColors.WarningSoft) {
         AppIcon(if (ready) R.drawable.ic_check else R.drawable.ic_warning,
@@ -70,5 +75,7 @@ fun MonitoringStatusCard(status: MonitoringStatus, onPermission: () -> Unit) {
         }, style = MaterialTheme.typography.bodyLarge)
         if (!ready) PrimaryAction(if (status == MonitoringStatus.PERMISSION_REQUIRED)
             "Aktifkan Akses" else "Periksa Pengaturan", onPermission)
+        onPermissionHelp?.let { SecondaryAction("Akses diblokir Android?", it) }
+        if (status == MonitoringStatus.NEEDS_ATTENTION) ListenerRecoveryHelp(onAndroidSettings)
     }
 }

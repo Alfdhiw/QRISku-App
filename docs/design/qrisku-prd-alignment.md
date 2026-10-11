@@ -1,6 +1,6 @@
 # Penyelarasan PRD dan implementasi QRISku
 
-PRD v1.0 menjadi acuan UI Native Android v0.2. HTML, SVG, gambar, `DESIGN.md`, dan metadata ekspor Stitch tetap disimpan sebagai referensi asli. Tema aplikasi dan dokumen ini menetapkan pilihan ketika token generator berbeda dengan PRD.
+PRD v1.0 menjadi acuan UI Native Android v0.2.1. HTML, SVG, gambar, `DESIGN.md`, dan metadata ekspor Stitch tetap disimpan sebagai referensi asli. Tema aplikasi dan dokumen ini menetapkan pilihan ketika token generator berbeda dengan PRD.
 
 ## Token implementasi
 
@@ -31,9 +31,12 @@ Implementasi: `ui/theme/QriskuTheme.kt`, `ui/components/`, dan resource tema/dra
 
 | UI / aksi | Sumber state / tindakan |
 | --- | --- |
-| Akses notifikasi | `Settings.Secure`, saat resume dan layar aktif |
+| Akses notifikasi | `NotificationManager.isNotificationListenerAccessGranted()` pada API 27+; fallback `Settings.Secure` pada API 26, saat resume dan layar aktif |
+| Akses diblokir Android? | Panduan setelan terbatas Android 13+; bukan klaim bahwa pembatasan dapat dideteksi otomatis |
+| Info Aplikasi / daftar aplikasi | Public Settings intent; HyperOS dapat memerlukan daftar aplikasi Android untuk menemukan menu persetujuan |
 | Pemantauan aktif | Izin diberikan dan `onListenerConnected()` diterima |
 | Perlu diperiksa | Izin ada, listener belum/tidak lagi terhubung |
+| Sambung ulang listener | Public `requestRebind()` hanya setelah izin diberikan; retry 30 detik, state aktif tetap menunggu callback |
 | Bacakan Otomatis | SharedPreferences; saat mati riwayat tetap dicatat |
 | Volume media | Persentase `AudioManager.STREAM_MUSIC` |
 | Menunggu / sedang dibacakan | Antrean TTS / `onStart()` |
@@ -57,6 +60,12 @@ Riwayat yang masih tersimpan juga menolak event duplikat setelah marker cache-ny
 
 Engine memilih voice Indonesia offline, memakai audio media, serta membatasi antrean dan timeout. Listener dan UI berbagi engine per proses, sehingga perubahan Activity tidak menghentikan layanan suara.
 
+Permintaan uji/putar ulang manual diperiksa kembali di dalam antrean Handler, agar ketukan cepat sebelum state UI diperbarui tidak menghasilkan suara ganda. Permintaan otomatis tetap boleh mengantre. Listener memprioritaskan `EXTRA_BIG_TEXT` yang tidak kosong agar preview kosong/terpotong tidak membuang pembayaran valid; format parser, filter package, dan kebijakan penyimpanan tidak dilonggarkan.
+
+Panduan izin dapat dibuka dari onboarding, Beranda, Pengaturan, serta Bantuan. Pada API 30+ tombol akses menuju detail listener QRISku; fallback ke daftar akses umum, lalu Info Aplikasi jika screen vendor tidak tersedia. Halaman Info Aplikasi dan daftar aplikasi tidak memberikan izin secara diam-diam. Dialog bantuan, panduan izin, dan konfirmasi hapus dapat digulir pada layar pendek/font besar.
+
+Saat izin sudah ada tetapi listener terputus, Beranda/Pengaturan menjelaskan izin latar belakang dan Mulai Otomatis Xiaomi/HyperOS, dengan tombol Settings Android umum. Tidak memakai intent internal vendor, izin tersembunyi, atau memaksa startup; pilihan autostart diputuskan pengguna di OS. Sambung ulang memakai jam monotonic agar polling foreground tidak membanjiri Android.
+
 ## Dampak perubahan
 
 `PocState` dan deduplikasi memori digantikan repository/state bersama. Parser dan pelafalan dipertahankan. Manifest memperbarui identitas, Application, splash, visibilitas DANA, serta pengecualian backup. Tidak menambahkan permission INTERNET atau dialog izin notifikasi runtime.
@@ -64,6 +73,8 @@ Engine memilih voice Indonesia offline, memakai audio media, serta membatasi ant
 Dependensi lifecycle Compose, coroutine, splash, dan pengujian ditambahkan. README dan smoke test diperbarui. Tests mencakup aturan status, parser, SQLite/pemulihan/deduplikasi/paging/penghapusan, filter sumber, preferensi, dan race callback terhadap izin.
 
 Hasil build, 23 tests, pemeriksaan UI, kontras token, dan batas validasi dicatat dalam [laporan verifikasi](verification/2026-10-09/README.md).
+
+Perbaikan izin dan pengujian Xiaomi Android 15, beserta 42 tests v0.2.1, dicatat dalam [laporan perangkat USB](verification/2026-10-11/README.md). Schema SQLite tetap v1, tanpa migration atau penghapusan data; APK diperbarui dengan signature sama.
 
 ## Next Recommended Updates
 

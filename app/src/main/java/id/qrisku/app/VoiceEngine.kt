@@ -9,6 +9,7 @@ import android.speech.tts.UtteranceProgressListener
 import id.qrisku.app.data.EngineStatus
 import id.qrisku.app.data.PlaybackStatus
 import id.qrisku.app.data.SpeechKind
+import id.qrisku.app.data.SpeechAdmission
 import id.qrisku.app.data.SpeechRequest
 import id.qrisku.app.data.SpeechState
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -94,6 +95,9 @@ class VoiceEngine(
                 publish(request, PlaybackStatus.FAILED)
                 return@post
             }
+            // Check inside the serialized queue, not only in the controller before Handler.post.
+            // Rapid manual taps must not queue duplicate tests/replays or overwrite their status.
+            if (!SpeechAdmission.accepts(request.kind, current != null || pending.isNotEmpty())) return@post
             if (pending.size >= 64) {
                 publish(request, PlaybackStatus.FAILED)
                 mutableState.value = mutableState.value.copy(error = "Antrean suara penuh. Periksa volume dan mesin suara.")

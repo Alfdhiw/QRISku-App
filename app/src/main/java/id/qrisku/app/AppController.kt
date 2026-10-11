@@ -3,7 +3,10 @@ package id.qrisku.app
 import android.content.ComponentName
 import android.content.Context
 import android.media.AudioManager
-import android.provider.Settings
+import android.os.Build
+import android.os.SystemClock
+import android.service.notification.NotificationListenerService
+import id.qrisku.app.data.ListenerReconnectPolicy
 import id.qrisku.app.data.NotificationIdentity
 import id.qrisku.app.data.NotificationRecord
 import id.qrisku.app.data.NotificationRepository
@@ -24,22 +27,27 @@ import java.util.UUID
 data class DeviceState(
     val notificationAccess: Boolean = false,
     val listenerConnected: Boolean = false,
-    val mediaVolume: Int = 0
+    val mediaVolume: Int = 0,
+    val supportsRestrictedSettings: Boolean = Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU
 )
 
 class AppController(private val context: Context,
                     databaseName: String = "qrisku_notifications.db",
                     preferencesName: String = "qrisku_voice",
                     private val notificationAccessReader: () -> Boolean = {
-                        val component = ComponentName(context, QriskuNotificationListener::class.java)
-                        Settings.Secure.getString(context.contentResolver, "enabled_notification_listeners")
-                            .orEmpty().split(':').any { ComponentName.unflattenFromString(it) == component }
-                    }) {
+                        NotificationAccessSettings.isGranted(context)
+                    },
+                    private val notificationRebinder: () -> Unit = {
+                        NotificationListenerService.requestRebind(ComponentName(context,
+                            QriskuNotificationListener::class.java))
+                    },
+                    private val elapsedRealtimeReader: () -> Long = SystemClock::elapsedRealtime) {
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.Main.immediate)
     val preferences = PreferencesRepository(context, preferencesName)
     val history = NotificationRepository(context, scope, databaseName)
     private val mutableDevice = MutableStateFlow(DeviceState())
     private var observedListenerConnection = false
+    private val reconnectPolicy = ListenerReconnectPolicy()
     val device = mutableDevice.asStateFlow()
     val voice = VoiceEngine(context) { request, status ->
         if (request.kind == SpeechKind.AUTOMATIC && request.recordId != null) {
@@ -68,6 +76,21 @@ class AppController(private val context: Context,
         observedListenerConnection = connected
         refreshDevice()
         if (!connected) voice.stopAutomatic()
+    }
+
+    /** Called on the main thread while foregrounded, or after Android reports disconnection. */
+    fun reconnectListener() {
+        refreshDevice()
+        val snapshot = device.value
+        if (reconnectPolicy.shouldRequest(snapshot.notificationAccess, snapshot.listenerConnected,
+                elapsedRealtimeReader())) {
+            try {
+                notificationRebinder()
+            } catch (_: SecurityException) {
+                // Permission can be revoked between the check and Android's request validation.
+                // Keep the disconnected state; the normal Settings consent flow remains required.
+            }
+        }
     }
 
     fun notificationReceived(packageName: String, key: String, postedAt: Long, title: String?, body: String?) {

@@ -13,6 +13,61 @@ import java.util.UUID
 
 @RunWith(AndroidJUnit4::class)
 class AppControllerTest {
+    @Test fun reconnectRequestsAreThrottledAndDoNotPretendToBeConnected() = runBlocking {
+        val context = ApplicationProvider.getApplicationContext<Context>()
+        val name = "qrisku_reconnect_test_" + UUID.randomUUID().toString()
+        var now = 0L
+        var requests = 0
+        val controller = AppController(context, "$name.db", name,
+            notificationAccessReader = { true }, notificationRebinder = { requests++ },
+            elapsedRealtimeReader = { now })
+        try {
+            controller.reconnectListener()
+            controller.reconnectListener()
+            assertEquals(1, requests)
+            assertFalse(controller.device.value.listenerConnected)
+            now = 30_000
+            controller.reconnectListener()
+            assertEquals(2, requests)
+            controller.listenerConnected(true)
+            controller.reconnectListener()
+            assertTrue(controller.device.value.listenerConnected)
+            assertEquals(2, requests)
+        } finally {
+            controller.close()
+            context.deleteDatabase("$name.db")
+            context.deleteSharedPreferences(name)
+        }
+    }
+
+    @Test fun reconnectRespectsDeniedPermissionAndHandlesRevocationRace() = runBlocking {
+        val context = ApplicationProvider.getApplicationContext<Context>()
+        val name = "qrisku_reconnect_denied_test_" + UUID.randomUUID().toString()
+        var access = false
+        var requests = 0
+        val controller = AppController(context, "$name.db", name,
+            notificationAccessReader = { access }, notificationRebinder = {
+                requests++
+                throw SecurityException("Synthetic revocation before Android validates the request")
+            })
+        try {
+            controller.reconnectListener()
+            assertEquals(0, requests)
+            access = true
+            controller.reconnectListener()
+            assertEquals(1, requests)
+            assertFalse(controller.device.value.listenerConnected)
+            access = false
+            controller.reconnectListener()
+            assertEquals(1, requests)
+            assertFalse(controller.device.value.notificationAccess)
+        } finally {
+            controller.close()
+            context.deleteDatabase("$name.db")
+            context.deleteSharedPreferences(name)
+        }
+    }
+
     @Test fun listenerCallbackSurvivesDelayedPermissionVisibility() = runBlocking {
         val context = ApplicationProvider.getApplicationContext<Context>()
         val name = "qrisku_connection_test_" + UUID.randomUUID().toString()

@@ -22,14 +22,15 @@ class QriskuNotificationListener : NotificationListenerService() {
 
         val extras = sbn.notification.extras
         val title = extras.getCharSequence(Notification.EXTRA_TITLE)?.toString()?.trim()
-        val body = (extras.getCharSequence(Notification.EXTRA_TEXT)
-            ?: extras.getCharSequence(Notification.EXTRA_BIG_TEXT))?.toString()?.trim()
+        val body = NotificationContent.body(extras.getCharSequence(Notification.EXTRA_TEXT),
+            extras.getCharSequence(Notification.EXTRA_BIG_TEXT))
         controller.notificationReceived(sbn.packageName, sbn.key, sbn.postTime, title, body)
     }
 
     override fun onListenerDisconnected() {
         super.onListenerDisconnected()
         controller.listenerConnected(false)
+        controller.reconnectListener()
     }
 
     override fun onDestroy() {

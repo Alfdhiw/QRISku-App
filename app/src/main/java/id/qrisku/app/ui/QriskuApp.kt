@@ -2,6 +2,8 @@ package id.qrisku.app.ui
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
@@ -23,6 +25,9 @@ import id.qrisku.app.ui.theme.QriskuColors
 
 data class DeviceActions(
     val permission: () -> Unit,
+    val applicationInfo: () -> Unit,
+    val applicationList: () -> Unit,
+    val androidSettings: () -> Unit,
     val voiceSettings: () -> Unit,
     val volumeSettings: () -> Unit,
     val batterySettings: () -> Unit,
@@ -38,6 +43,8 @@ fun QriskuApp(controller: AppController, actions: DeviceActions) {
     var destination by rememberSaveable { mutableStateOf("Beranda") }
     var selectedRecord by rememberSaveable { mutableStateOf<String?>(null) }
     var showHelp by rememberSaveable { mutableStateOf(false) }
+    var showPermissionHelp by rememberSaveable { mutableStateOf(false) }
+    val permissionHelp = { showPermissionHelp = true }
     BackHandler(enabled = preferences.onboardingComplete && destination != "Beranda" && selectedRecord == null) {
         destination = "Beranda"
     }
@@ -70,7 +77,7 @@ fun QriskuApp(controller: AppController, actions: DeviceActions) {
     ) { padding ->
         Box(Modifier.fillMaxSize().padding(padding).consumeWindowInsets(padding)) {
             if (!preferences.onboardingComplete) {
-                OnboardingScreen(device, speech, actions.permission, controller::testVoice,
+                OnboardingScreen(device, speech, actions.permission, permissionHelp, controller::testVoice,
                     controller.voice::stopAll, controller.voice::retry, actions.voiceSettings,
                     controller::completeOnboarding)
             } else when (destination) {
@@ -79,9 +86,11 @@ fun QriskuApp(controller: AppController, actions: DeviceActions) {
                 "Pengaturan" -> SettingsScreen(device, preferences, history, speech,
                     controller::setAutomatic, controller::setSpeechRate, controller::testVoice,
                     controller.voice::stopAll, controller.voice::retry, actions.voiceSettings,
-                    actions.volumeSettings, actions.permission, actions.batterySettings, controller::clearHistory,
+                    actions.volumeSettings, actions.permission, permissionHelp, actions.androidSettings,
+                    actions.batterySettings, controller::clearHistory,
                     controller::reloadHistory)
-                else -> HomeScreen(device, preferences, history, speech, actions.permission,
+                else -> HomeScreen(device, preferences, history, speech, actions.permission, permissionHelp,
+                    actions.androidSettings,
                     controller::setAutomatic, controller::testVoice, controller.voice::stopAll,
                     controller.voice::retry, actions.voiceSettings, { destination = "Riwayat" },
                     controller::reloadHistory)
@@ -92,13 +101,31 @@ fun QriskuApp(controller: AppController, actions: DeviceActions) {
     if (selected != null) {
         NotificationDetailSheet(selected, speech, { selectedRecord = null }, { controller.replay(selected) }, actions.openDana)
     }
+    if (showPermissionHelp) {
+        RestrictedSettingsDialog(
+            onDismiss = { showPermissionHelp = false },
+            onApplicationInfo = { showPermissionHelp = false; actions.applicationInfo() },
+            onApplicationList = { showPermissionHelp = false; actions.applicationList() },
+            onPermission = { showPermissionHelp = false; actions.permission() })
+    }
     if (showHelp) {
         AlertDialog(onDismissRequest = { showHelp = false },
             title = { Text("Bantuan Qrisku") },
-            text = { Text("Aktifkan akses notifikasi, lalu gunakan Uji Suara. Pastikan volume media terdengar " +
-                "dan suara Bahasa Indonesia offline tersedia.\n\n" +
-                "Qrisku hanya membacakan notifikasi DANA Bisnis yang sesuai. " +
-                "Untuk memastikan pembayaran, periksa aplikasi DANA.") },
+            text = {
+                Column(Modifier.verticalScroll(rememberScrollState()),
+                    verticalArrangement = Arrangement.spacedBy(16.dp)) {
+                    Text("Aktifkan akses notifikasi, lalu gunakan Uji Suara. Pastikan volume media terdengar " +
+                        "dan suara Bahasa Indonesia offline tersedia.\n\n" +
+                        "Qrisku hanya membacakan notifikasi DANA Bisnis yang sesuai. " +
+                        "Untuk memastikan pembayaran, periksa aplikasi DANA.")
+                    if (device.supportsRestrictedSettings) {
+                        SecondaryAction("Panduan Akses Notifikasi", {
+                            showHelp = false
+                            showPermissionHelp = true
+                        })
+                    }
+                }
+            },
             confirmButton = { TextButton(onClick = { showHelp = false }) { Text("Mengerti") } })
     }
 }
